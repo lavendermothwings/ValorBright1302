@@ -1,8 +1,6 @@
 package edu.westga.cs1302.ValorBrightProject1.views;
 
-
-
-import edu.westga.cs1302.ValorBrightProject1.model.Tasks;
+import edu.westga.cs1302.ValorBrightProject1.model.Task;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,7 +10,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 
 
 /**
@@ -23,45 +20,39 @@ import javafx.scene.input.MouseEvent;
  */
 public class MainWindow {
 	@FXML
-    private TextArea description;
+	private TextArea description;
 
-    @FXML
-    private ListView<String> list = new ListView<String>();
+	@FXML
+	private ListView<Task> list = new ListView<Task>();
 
-    @FXML
-    private TextField name;
+	@FXML
+	private TextField name;
 
-    @FXML
-    private ComboBox<String> priority = new ComboBox<String>();
+	@FXML
+	private ComboBox<String> priority = new ComboBox<String>();
 
-    @FXML
-    private Button submit;	
-    
+	@FXML
+	private Button submit;
 
-    
-    
-    
-    //fix Tasks and comboBox
-    
-    @FXML
-    void addTask(ActionEvent event) {
-    	this.list.getItems().add(name.getText());
-    	
-    }
-    
-  
+
+	@FXML
+	void addTask(ActionEvent event) {
+		String name = this.name.getText();
+		String priority = this.priority.getSelectionModel().getSelectedItem();
+		String description = this.description.getText();
+
+		Task newTask = new Task(name, priority, description);
+		
+		list.getItems().add(newTask);
+		
+
+	}
 
 	/**
-     * Perform any needed initialization of UI components and underlying objects.
-     */
-    public void initialize() {
-    	priority.setItems(FXCollections.observableArrayList(
-    		        "High",
-    		        "Medium",
-    		        "Low"
-    		    ));
+	 * Perform any needed initialization of UI components and underlying objects.
+	 */
+	public void initialize() {
+		priority.setItems(FXCollections.observableArrayList("High", "Medium", "Low"));
 
-       
-    	
-    }
+	}
 }
