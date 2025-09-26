@@ -22,6 +22,7 @@
       <ComboBox id="priority" fx:id="priority" prefWidth="150.0" />
       <Button fx:id="submit" mnemonicParsing="false" onAction="#addTask" text="Submit" />
       <ListView fx:id="list" prefHeight="200.0" prefWidth="200.0" />
+      <Button mnemonicParsing="false" onAction="#removeTask" text="Remove" />
       <Label text="Display Description" />
       <TextArea fx:id="selectedDisplay" prefHeight="200.0" prefWidth="200.0" />
       <Button mnemonicParsing="false" onAction="#updateDescription" text="Update Description" />

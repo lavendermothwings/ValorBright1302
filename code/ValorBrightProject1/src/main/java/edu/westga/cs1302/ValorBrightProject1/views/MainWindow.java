@@ -57,6 +57,12 @@ public class MainWindow {
 	}
 	
 	@FXML
+    void removeTask(ActionEvent event) {
+		int numTask = list.getSelectionModel().getSelectedIndex();
+		list.getItems().remove(numTask);
+    }
+	
+	@FXML
     void updateDescription(ActionEvent event) {
 		this.list.getSelectionModel().getSelectedItem().setDescription(selectedDisplay.getText());
 		
