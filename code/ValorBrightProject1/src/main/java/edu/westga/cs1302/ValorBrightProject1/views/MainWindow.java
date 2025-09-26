@@ -1,6 +1,8 @@
 package edu.westga.cs1302.ValorBrightProject1.views;
 
 import edu.westga.cs1302.ValorBrightProject1.model.Task;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -33,6 +35,12 @@ public class MainWindow {
 
 	@FXML
 	private Button submit;
+	
+	@FXML
+	private TextArea selectedDisplay;
+
+	 @FXML
+	 private TextArea selectedPriority;
 
 
 	@FXML
@@ -41,18 +49,43 @@ public class MainWindow {
 		String priority = this.priority.getSelectionModel().getSelectedItem();
 		String description = this.description.getText();
 
-		Task newTask = new Task(name, priority, description);
+		Task newTask = new Task(name, description, priority);
 		
 		list.getItems().add(newTask);
 		
 
 	}
+	
+	
 
 	/**
 	 * Perform any needed initialization of UI components and underlying objects.
 	 */
 	public void initialize() {
 		priority.setItems(FXCollections.observableArrayList("High", "Medium", "Low"));
+		
+		list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Task>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Task> observable, Task oldValue, Task newValue) {
+				 if (!newValue.equals(oldValue)) {
+					 selectedDisplay.setText(newValue.getDescription());
+					 selectedPriority.setText(newValue.getPriority());
+					 
+				 }
+				
+			}
+			
+		});
+//		
+//		myListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<MyDataModel>() {
+//
+//		    @Override
+//		    public void changed(ObservableValue<? extends MyDataModel> observable, MyDataModel oldValue, MyDataModel newValue) {
+//		        // Your action here
+//		        System.out.println("Selected item: " + newValue);
+//		    }
+//		});
 
 	}
 }
