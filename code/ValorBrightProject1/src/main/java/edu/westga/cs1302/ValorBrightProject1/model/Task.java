@@ -23,6 +23,10 @@ public class Task {
 		return this.description;
 	}
 	
+	public void setDescription(String newDescription) {
+		description = newDescription;
+	}
+	
 	public String getPriority() {
 		return this.priority;
 	}

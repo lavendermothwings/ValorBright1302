@@ -23,7 +23,8 @@
       <Button fx:id="submit" mnemonicParsing="false" onAction="#addTask" text="Submit" />
       <ListView fx:id="list" prefHeight="200.0" prefWidth="200.0" />
       <Label text="Display Description" />
-      <TextArea fx:id="selectedDisplay" editable="false" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="selectedDisplay" prefHeight="200.0" prefWidth="200.0" />
+      <Button mnemonicParsing="false" onAction="#updateDescription" text="Update Description" />
       <Label text="Display Priority" />
       <TextArea fx:id="selectedPriority" editable="false" prefHeight="71.0" prefWidth="518.0" />
    </children>

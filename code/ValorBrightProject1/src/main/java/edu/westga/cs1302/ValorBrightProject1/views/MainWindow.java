@@ -56,7 +56,11 @@ public class MainWindow {
 
 	}
 	
-	
+	@FXML
+    void updateDescription(ActionEvent event) {
+		this.list.getSelectionModel().getSelectedItem().setDescription(selectedDisplay.getText());
+		
+	}
 
 	/**
 	 * Perform any needed initialization of UI components and underlying objects.
@@ -77,15 +81,7 @@ public class MainWindow {
 			}
 			
 		});
-//		
-//		myListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<MyDataModel>() {
-//
-//		    @Override
-//		    public void changed(ObservableValue<? extends MyDataModel> observable, MyDataModel oldValue, MyDataModel newValue) {
-//		        // Your action here
-//		        System.out.println("Selected item: " + newValue);
-//		    }
-//		});
+
 
 	}
 }
