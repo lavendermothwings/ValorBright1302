@@ -2,7 +2,7 @@ package edu.westga.cs1302.ValorBrightProject1.model;
 
 public class Task {
 
-	private String name;
+	private final String name;
 	private String description;
 	private String priority;
 	
