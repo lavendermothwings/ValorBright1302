@@ -40,7 +40,16 @@ public class MainWindow {
 	private TextArea selectedDisplay;
 
 	 @FXML
-	 private TextArea selectedPriority;
+	 private TextField selectedPriority;
+	  
+	 @FXML
+	    private TextField totalHigh;
+
+	    @FXML
+	    private TextField totalLow;
+
+	    @FXML
+	    private TextField totalMedium;
 
 
 	@FXML
