@@ -1,0 +1,108 @@
+commit c4b1eb13ce150ab3eef6ece6978363e0031b050c
+Author: Valor Bright <lavendermothwings>
+Date:   Sun Sep 28 21:16:38 2025 -0400
+
+    Added Preconditions, Tests, and Formatted with CheckStyle
+    
+    1) Added preconditions that were missing
+    2) Created tests for PriorityCount
+    3) Created tests for Tasks
+    4) Formatted with Checkstyle
+    5) Went over project and made adjustments as needed, such as try/catch, this., and other oversights
+
+commit 9cd314916b628b1ac448742cf12dd101a77a16de
+Author: Valor Bright <lavendermothwings>
+Date:   Sat Sep 27 21:44:53 2025 -0400
+
+    Created a class and MainWindow method to count priorities
+    
+    1) Created a class to count priorities
+    2) Created a method in MainWindow.java to use new class and display count
+
+commit fbc3633ab511c039e72fa4e13f6a4ff0dd9521e0
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Sep 26 15:12:45 2025 -0400
+
+    Add Remove Task
+    
+    1) Added a button and method to remove a task from the ListView
+
+commit ec54955db4a750c4566f2c5f35473ef4d41c540c
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Sep 26 14:48:13 2025 -0400
+
+    Update Description
+    
+    1) Added a new button with action to change description of a task selected from the ListView
+
+commit d040fba5e051ce432868093ec2fae75e13286dc4
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Sep 26 13:39:04 2025 -0400
+
+    Add Select for ListView
+    
+    1) Added textarea for description and priority
+    2) Added code to MainWindow.java to select from ListView list and display selected Tasks description and priority
+
+commit 1aaf191c1d53c3bfaa3750cecefeae116b2f80b3
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Sep 26 10:44:47 2025 -0400
+
+    Created Lab 5 and Updated Save Students
+    
+    1) created lab 5
+    2) updated save students to have a comma and name and number to be on the same line
+
+commit d56366b710105bd4e0cdaf5d78e0b95e21f1d8fb
+Author: Valor Bright <lavendermothwings>
+Date:   Thu Sep 25 09:11:36 2025 -0400
+
+    Created SceneBuilder and Data Class
+    >
+    > 1) Created the basic controllers of the SceneBuilder
+    > 2) Created the Data class Tasks to store the name, description, and priority
+
+commit 1fa5ccfca0f6621fab28843f91f04c29a01e53d3
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Sep 24 10:00:49 2025 -0400
+
+    Changing Project name
+    
+    Changing project name from javafx sample starter to Volor Bright Project 1
+
+commit 89e851a2ed996a9827c06d7a42d0974b16ad46e7
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Sep 24 09:54:01 2025 -0400
+
+    Adding Project 1 Back
+    
+    Adding the copy of project 1 files which had been maintained in Eclipse workspace.
+
+commit bef61ab016f4b764d1382143ee3de55f36958011
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Sep 24 09:52:59 2025 -0400
+
+    removing old project files
+    
+    removing the old p1 files to move in the current version which had been imported into the eclipse workspace.
+
+commit 5c2bdc2b2f50489d7bc49013a3f91bf11338cc8e
+Author: Valor Bright <lavendermothwings>
+Date:   Tue Sep 23 09:33:55 2025 -0400
+
+    test commit
+
+commit 23ecdd6112e6dbbf225b1897e3ec3189e1733b5f
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Sep 19 14:35:36 2025 -0400
+
+    Create New Repository and Add Project 1
+    
+    1) Created a new repository to replace broken one
+    2) Added JavaFx as a template for Project 1
+
+commit a8e4a7b379bb5ec475bfc44184dc4f706536b50e
+Author: lavendermothwings <30874407+lavendermothwings@users.noreply.github.com>
+Date:   Fri Sep 19 14:24:00 2025 -0400
+
+    Initial commit
