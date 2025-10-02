@@ -1,0 +1,9 @@
+Added Tests, Checkstyle Formatting, and Update Commit History
+
+1) Added tests: testLoadStudentData and testSaveStudentData
+2) Went over project and applied checkstyle formatting
+3) Updated commit history
+
+Modified loadStudentData to read file with commas
+
+1) modified loadStudentData to read file with commas and separate name and grade
