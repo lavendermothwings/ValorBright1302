@@ -146,19 +146,19 @@ public class MainWindow {
 		
 	}
     
-//    @FXML
-//    void sortByPriority(ActionEvent event) {
-//    	String sortPriority = this.sortList.getSelectionModel().getSelectedItem();
-//    	Ascending ascend = new Ascending();
-//    	Descending descend = new Descending();
-//    	if (sortPriority.equals("Ascending")) {
-//    		this.list.getItems().sort(ascend);
-//    	}
-//    	else if (sortPriority.equals("Descending")) {
-//    		this.list.getItems().sort(descend);
-//    	}
-//
-//    }
+    @FXML
+    void sortByPriority(ActionEvent event) {
+    	String sortPriority = this.sortList.getSelectionModel().getSelectedItem();
+    	Ascending ascend = new Ascending();
+    	Descending descend = new Descending();
+    	if (sortPriority.equals("Ascending")) {
+    		this.list.getItems().sort(ascend);
+    	}
+    	else if (sortPriority.equals("Descending")) {
+    		this.list.getItems().sort(descend);
+    	}
+
+    }
     
     /**
      * Perform any needed initialization of UI components and underlying objects.
