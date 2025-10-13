@@ -1,8 +1,11 @@
 package edu.westga.cs1302.Project1ValorBright2025.views;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
+import edu.westga.cs1302.Project1ValorBright2025.model.Ascending;
 import edu.westga.cs1302.Project1ValorBright2025.model.CountPriority;
+import edu.westga.cs1302.Project1ValorBright2025.model.Descending;
 import edu.westga.cs1302.Project1ValorBright2025.model.Task;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -34,6 +37,8 @@ public class MainWindow {
 
     @FXML
 	private ComboBox<String> priority = new ComboBox<String>();
+    @FXML
+    private ComboBox<String> sortList = new ComboBox<String>();
 
     @FXML
     private TextArea selectedDisplay;
@@ -72,30 +77,27 @@ public class MainWindow {
 
     @FXML
     void countPriority(ActionEvent event) {
-    	CountPriority level = new CountPriority();
-    	ArrayList<Task> countList = new ArrayList<Task>();
-    	try {
-    	String priority = this.priority.getSelectionModel().getSelectedItem();
-    	int priCount = 0;
+    	
+    	CountPriority countHigh = new CountPriority();
+    	CountPriority countMedium = new CountPriority();
+    	CountPriority countLow = new CountPriority();
+    	ArrayList<Task> task = new ArrayList<Task>();
+    	int highTotal = 0;
+    	int mediumTotal = 0;
+    	int lowTotal = 0;
     	
     	for (int iterate = 0; iterate < this.list.getItems().size(); iterate++) {
-    		countList.add(this.list.getItems().get(iterate));
+    		task.add(iterate, this.list.getItems().get(iterate));
     	}
     	
-    	priCount = level.getCount(priority, countList);
     	
-    	if (priority.equals("High")) {
-    		this.highTotal.setText(String.valueOf(priCount));
-    	} else if (priority.equals("Medium")) {
-    		this.mediumTotal.setText(String.valueOf(priCount));
-    	} else if (priority.equals("Low")) {
-    		this.lowTotal.setText(String.valueOf(priCount));
-    	}
-    	} catch (IllegalArgumentException error) {
-    		Alert alert = new Alert(Alert.AlertType.ERROR);
-    		alert.setContentText("No task to tally");
-    		alert.showAndWait();
-    	}
+    	highTotal = countHigh.getCount("High", task);
+    	mediumTotal = countMedium.getCount("Medium", task);
+    	lowTotal = countLow.getCount("Low", task);
+    	
+    	this.highTotal.setText(String.valueOf(highTotal));
+    	this.mediumTotal.setText(String.valueOf(mediumTotal));
+    	this.lowTotal.setText(String.valueOf(lowTotal));
    
     }
 
@@ -144,11 +146,27 @@ public class MainWindow {
 		
 	}
     
+//    @FXML
+//    void sortByPriority(ActionEvent event) {
+//    	String sortPriority = this.sortList.getSelectionModel().getSelectedItem();
+//    	Ascending ascend = new Ascending();
+//    	Descending descend = new Descending();
+//    	if (sortPriority.equals("Ascending")) {
+//    		this.list.getItems().sort(ascend);
+//    	}
+//    	else if (sortPriority.equals("Descending")) {
+//    		this.list.getItems().sort(descend);
+//    	}
+//
+//    }
+    
     /**
      * Perform any needed initialization of UI components and underlying objects.
      */
     public void initialize() {
     	this.priority.setItems(FXCollections.observableArrayList("High", "Medium", "Low"));
+    	this.sortList.setItems(FXCollections.observableArrayList("Ascending", "Descending"));
+    	
    
     	this.list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Task>() {
     	

@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.Project1ValorBright2025.views.MainWindow">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.Project1ValorBright2025.views.MainWindow">
    <children>
       <Label layoutX="53.0" layoutY="14.0" text="Task" />
       <TextField fx:id="name" layoutX="20.0" layoutY="40.0" />
@@ -32,5 +32,8 @@
       <Label layoutX="451.0" layoutY="57.0" text="Medium" />
       <Label layoutX="451.0" layoutY="91.0" text="Low" />
       <Label layoutX="332.0" layoutY="151.0" text="List of Tasks" />
+      <Button layoutX="43.0" layoutY="363.0" mnemonicParsing="false" onAction="#sortByPriority" text="Sort by Priority" />
+      <ComboBox fx:id="sortList" layoutX="20.0" layoutY="322.0" prefWidth="150.0" />
+      <Label layoutX="58.0" layoutY="290.0" text="Sort List" />
    </children>
 </AnchorPane>

@@ -1,5 +1,7 @@
 package edu.westga.cs1302.Project1ValorBright2025.model;
 
+import java.util.Comparator;
+
 /** Provides creating a Task with a name, description, and priority level and access to the information
  * 
  * @author Valor Bright
@@ -86,6 +88,24 @@ public class Task {
 		return this.priority;
 	}
 	
+	/**
+	 * 
+	 */
+	public int getPriorityValue() {
+		int priorityValue = 0;
+		String priority = this.priority;
+		if (priority.equals("High")) {
+			priorityValue = 3;
+		}
+		else if (priority.equals("Medium")) {
+			priorityValue = 2;
+		}
+		else {
+			priorityValue = 1;
+		}
+		return priorityValue;
+	}
+	
 	/** Provides a string of the task name
 	 * 
 	 * @return name String of name of task
@@ -94,4 +114,5 @@ public class Task {
 	public String toString() {
 		return this.name;
 	}
-}
+	
+	}

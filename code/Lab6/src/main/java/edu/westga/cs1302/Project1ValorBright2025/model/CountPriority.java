@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * 
  */
 public class CountPriority {
-	private int count;
+	private int count = 0;
 
 	/** Get the count of each selected priority level
 	 * 
@@ -20,7 +20,6 @@ public class CountPriority {
 	 */
 	
 	public int getCount(String priority, ArrayList<Task> task) throws IllegalArgumentException {
-		
 		if (priority == null) {
 			throw new IllegalArgumentException("no priority selected");
 		}
@@ -31,17 +30,19 @@ public class CountPriority {
 		if (task.isEmpty()) {
 			throw new IllegalArgumentException("no task in list");
 		}
-	
+		
 		String priCount;
 		for (Task getPri : task) {
 			priCount = getPri.getPriority();
-			if (priCount == priority) {
+			if (priCount.equals(priority)) {
 				this.count++;
 			}
 				
 		}
 		
+		
 		return this.count;
+		
 	}
 	
 }
