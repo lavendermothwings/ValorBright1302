@@ -86,6 +86,7 @@ public class MainWindow {
     	int mediumTotal = 0;
     	int lowTotal = 0;
     	
+    	try {
     	for (int iterate = 0; iterate < this.list.getItems().size(); iterate++) {
     		task.add(iterate, this.list.getItems().get(iterate));
     	}
@@ -98,6 +99,12 @@ public class MainWindow {
     	this.highTotal.setText(String.valueOf(highTotal));
     	this.mediumTotal.setText(String.valueOf(mediumTotal));
     	this.lowTotal.setText(String.valueOf(lowTotal));
+    	} catch (IllegalArgumentException error) {
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setContentText("No task to tally. Add a task to use this function.");
+			alert.showAndWait();
+    		
+    	}
    
     }
 
@@ -147,17 +154,32 @@ public class MainWindow {
 	}
     
     @FXML
-    void sortByPriority(ActionEvent event) {
+    void sortByPriority(ActionEvent event) throws NullPointerException {
     	String sortPriority = this.sortList.getSelectionModel().getSelectedItem();
     	Ascending ascend = new Ascending();
     	Descending descend = new Descending();
+    	
+    	try {
+    		if (this.list.getItems().isEmpty()) {
+        		throw new IllegalArgumentException("no description provided");
+        	}
     	if (sortPriority.equals("Ascending")) {
     		this.list.getItems().sort(ascend);
     	}
     	else if (sortPriority.equals("Descending")) {
     		this.list.getItems().sort(descend);
     	}
+    	} catch (NullPointerException error) {
+    		Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setContentText("No preference is selected. Please select Ascending or Descending.");
+			alert.showAndWait();
+    	}  catch (IllegalArgumentException error) {
+    		Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setContentText("No task have been added to the list. Please add a task to the list to use this function");
+			alert.showAndWait();
+    	} 
 
+    
     }
     
     /**

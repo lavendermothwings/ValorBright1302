@@ -6,6 +6,10 @@ public class Ascending implements Comparator<Task>  {
 		
 		@Override
 		public int compare(Task task1, Task task2) {
+			if (task1.getPriority() == null) {
+				throw new IllegalArgumentException();
+			}
+			
 			return Integer.compare(task1.getPriorityValue(), task2.getPriorityValue());
 		}
 	}
