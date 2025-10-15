@@ -18,6 +18,16 @@ class TestDescending {
 	assertThrows(NullPointerException.class, ()-> {descend.compare(null, null);});
 	}
 	
+	@Test
+	void testWithTaskNullPriority() {
+	Descending descend = new Descending();
+	ArrayList<Task> taskArray = new ArrayList<Task>();
+	Task task1 = new Task("taskHigh1", "example", null);
+	taskArray.add(task1);
+	taskArray.sort(descend);
+	
+	assertThrows(NullPointerException.class, ()-> {descend.compare(null, null);});
+	}
 	
 	@Test
 	void testWithOneTask() {
