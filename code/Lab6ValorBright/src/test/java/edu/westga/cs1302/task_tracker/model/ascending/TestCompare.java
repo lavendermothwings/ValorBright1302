@@ -27,19 +27,6 @@ class TestCompare {
 		assertThrows(NullPointerException.class, ()-> {ascend.compare(null, task2);});
 		}
 		
-		
-		
-//		@Test
-//		void testWithOneTask() {
-//		Ascending ascend = new Ascending();
-//		ArrayList<Task> taskArray = new ArrayList<Task>();
-//		Task task1 = new Task("taskHigh1", "example", TaskPriority.HIGH);
-//		taskArray.add(task1);
-//		taskArray.sort(ascend);
-//		
-//		assertEquals(taskArray.toString(), "[taskHigh1]");
-//		}
-		
 		@Test
 		void testWithTwoTask() {
 		Ascending ascend = new Ascending();

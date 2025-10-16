@@ -7,15 +7,18 @@ import java.util.Comparator;
  * @author Valor Bright
  * @version Fall 2025
  * 
- * @param task task to compare priorities
- * @param task another task from the list to compare priorities
- * @return int that that sorts the tasks by priority
  */
 public class Descending implements Comparator<Task>  {
-	
+	 /** Compares tasks
+	   * 
+	   * @param task1 task that will be compared
+	   * @param task2 second task that will be compared
+	   * 
+	   * @return int an int that sorts the tasks by priority
+	*/
 		@Override
-		public int compare(Task task1, Task task2) {
-			if(task1.equals(null) || task2.equals(null)) {
+		public int compare(Task task1, Task task2)throws NullPointerException  {
+			if (task1.equals(null) || task2.equals(null)) {
 				throw new NullPointerException("task cannot be null");
 			}
 		return task1.getPriority().compareTo(task2.getPriority());
