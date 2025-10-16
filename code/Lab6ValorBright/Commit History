@@ -1,0 +1,58 @@
+commit 296c08107d27e2ad383a5e16a2638bc60a78176d
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 15 22:04:01 2025 -0400
+
+    Moved to provided template, Reworked tests, and Altered sortTasks
+    
+    1) Moved parts of project into provided sample
+    2) Reworked the tests for Ascending and Descending, tested compare instead of sort
+    3) Altered sortTasks method to work better with provided starter
+
+commit 9504f0dd60a01ad4be96282ed7b3c8c966f3ffcf
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 15 09:13:49 2025 -0400
+
+    Added in Test in Descending
+    
+    1) Added test in Descending that doesn't work
+
+commit a0267d0c540515d50a713d87fca262b6914388ae
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 15 08:55:33 2025 -0400
+
+    Created Tests for Ascending and Descending class
+    
+    1) Created tests for Ascending
+    2) Created tests for Descending
+
+commit 434f8904cee1c614e83e6aa17be63d385c841b51
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Oct 13 10:48:00 2025 -0400
+
+    Created ComboBox for sorting list
+    
+    1) Created ComboBox to sort the list of tasks. Does both descending and ascending.
+
+commit f74213967f0e86af5fc94853e92ef33a1eaf2a8a
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Oct 13 10:45:32 2025 -0400
+
+    Created Descending
+    
+    1) Made Descending class to sort task list
+
+commit c4ede900094470421f8e80a572dfc7145a239516
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Oct 13 10:40:45 2025 -0400
+
+    Created Ascending
+    
+    1) Made the Ascending class
+
+commit 3f79dce930e5aa2ecbfb0ac0260420d1136d66ef
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Oct 10 14:02:15 2025 -0400
+
+    Fix CountPriority
+    
+    1) fixed CountPriority so that it would tally all the piorities
