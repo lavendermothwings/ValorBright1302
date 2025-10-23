@@ -49,6 +49,10 @@ public class MainWindow {
     void addTask(ActionEvent event) {
     	try {
     		this.tasks.getItems().add(new Task(this.name.getText(), this.description.getText(), this.priority.getValue()));
+    		if (this.order.getValue() != null) {
+        		this.tasks.getItems().sort(this.order.getValue());
+        	}
+    		
     	} catch (IllegalArgumentException error) {
     		Alert alert = new Alert(AlertType.ERROR);
     		alert.setContentText(error.getMessage());
@@ -86,6 +90,10 @@ public class MainWindow {
     	if (selectedTask != null) {
     		this.tasks.getItems().remove(selectedTask);
     	}
+    	if (this.order.getValue() != null) {
+    		this.tasks.getItems().sort(this.order.getValue());
+    	}
+    	
     }
 
     /** Update the description of the selected task.
@@ -128,6 +136,7 @@ public class MainWindow {
     void sortTasks(ActionEvent event) {
     	if (this.order.getValue() != null) {
     		this.tasks.getItems().sort(this.order.getValue());
+    		System.out.println(this.order.getValue());
     	}
     }
 

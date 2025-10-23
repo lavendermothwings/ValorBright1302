@@ -41,7 +41,7 @@ public class Task {
 	
 	/** Create a new Task with the provided information.
 	 * 
-	 * @preconditon name != null && !name.isEmpty() &&
+	 * @precondition name != null && !name.isEmpty() &&
 	 * 				description != null &&
 	 * 				priority != null
 	 * 
