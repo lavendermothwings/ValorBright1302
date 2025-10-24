@@ -8,9 +8,12 @@ import java.util.Comparator;
  * @version Fall 2025
  * 
  */
-public class Ascending implements Comparator<Task>  {
+public class AscendingByName implements Comparator<Task>  {
+	private final String ascend = "Ascending by Name";
 	
-  /** Compares tasks
+	
+	
+  /** Compares tasks priority
    * 
    * @param task1 task that will be compared
    * @param task2 second task that will be compared
@@ -22,6 +25,20 @@ public class Ascending implements Comparator<Task>  {
 			if (task1.equals(null) || task2.equals(null)) {
 				throw new NullPointerException("task cannot be null");
 			}
-		return task1.getPriority().compareTo(task2.getPriority()) * -1;
+		return task1.getName().compareTo(task2.getName());
+		}
+		
+		/** Returns the name of the task to represent the task as a String
+		 * 
+		 * @precondition none
+		 * @postcondition none
+		 * 
+		 * @return the name of the task
+		 */
+		@Override
+		public String toString() {
+			return this.ascend;
 		}
 	}
+
+

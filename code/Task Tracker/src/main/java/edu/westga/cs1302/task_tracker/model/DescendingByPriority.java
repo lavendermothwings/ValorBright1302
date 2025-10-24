@@ -8,7 +8,9 @@ import java.util.Comparator;
  * @version Fall 2025
  * 
  */
-public class Descending implements Comparator<Task>  {
+public class DescendingByPriority implements Comparator<Task>  {
+	private final String descend = "Descending by Priority";
+	
 	 /** Compares tasks
 	   * 
 	   * @param task1 task that will be compared
@@ -22,5 +24,17 @@ public class Descending implements Comparator<Task>  {
 				throw new NullPointerException("task cannot be null");
 			}
 		return task1.getPriority().compareTo(task2.getPriority());
+		}
+		
+		/** Returns the name of the task to represent the task as a String
+		 * 
+		 * @precondition none
+		 * @postcondition none
+		 * 
+		 * @return the name of the task
+		 */
+		@Override
+		public String toString() {
+			return this.descend;
 		}
 	}

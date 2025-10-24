@@ -2,8 +2,10 @@ package edu.westga.cs1302.task_tracker.views;
 
 import java.util.Comparator;
 
-import edu.westga.cs1302.task_tracker.model.Ascending;
-import edu.westga.cs1302.task_tracker.model.Descending;
+import edu.westga.cs1302.task_tracker.model.AscendingByName;
+import edu.westga.cs1302.task_tracker.model.AscendingByPriority;
+import edu.westga.cs1302.task_tracker.model.DescendingByName;
+import edu.westga.cs1302.task_tracker.model.DescendingByPriority;
 import edu.westga.cs1302.task_tracker.model.Task;
 import edu.westga.cs1302.task_tracker.model.Task.TaskPriority;
 import edu.westga.cs1302.task_tracker.model.TaskUtility;
@@ -49,9 +51,7 @@ public class MainWindow {
     void addTask(ActionEvent event) {
     	try {
     		this.tasks.getItems().add(new Task(this.name.getText(), this.description.getText(), this.priority.getValue()));
-    		if (this.order.getValue() != null) {
-        		this.tasks.getItems().sort(this.order.getValue());
-        	}
+    		this.sortLists();
     		
     	} catch (IllegalArgumentException error) {
     		Alert alert = new Alert(AlertType.ERROR);
@@ -90,9 +90,7 @@ public class MainWindow {
     	if (selectedTask != null) {
     		this.tasks.getItems().remove(selectedTask);
     	}
-    	if (this.order.getValue() != null) {
-    		this.tasks.getItems().sort(this.order.getValue());
-    	}
+    	this.sortLists();
     	
     }
 
@@ -134,9 +132,15 @@ public class MainWindow {
      */
     @FXML
     void sortTasks(ActionEvent event) {
+    	this.sortLists();
+    }
+    
+    /* Sort the listView
+     * 
+     */
+    private void sortLists() {
     	if (this.order.getValue() != null) {
     		this.tasks.getItems().sort(this.order.getValue());
-    		System.out.println(this.order.getValue());
     	}
     }
 
@@ -150,8 +154,10 @@ public class MainWindow {
     public void initialize() {
     	this.priority.getItems().addAll(TaskPriority.HIGH, TaskPriority.MEDIUM, TaskPriority.LOW);
     	this.priority.setValue(this.priority.getItems().get(0));
-    	this.order.getItems().add(new Ascending());
-    	this.order.getItems().add(new Descending());
+    	this.order.getItems().add(new AscendingByPriority());
+    	this.order.getItems().add(new DescendingByPriority());
+    	this.order.getItems().add(new AscendingByName());
+    	this.order.getItems().add(new DescendingByName());
     	this.priority.setValue(this.priority.getItems().get(0));
     }
 }
