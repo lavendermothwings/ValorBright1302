@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 import edu.westga.cs1302.task_tracker.model.AscendingByName;
 import edu.westga.cs1302.task_tracker.model.AscendingByPriority;
+import edu.westga.cs1302.task_tracker.model.ContainerTask;
 import edu.westga.cs1302.task_tracker.model.DescendingByName;
 import edu.westga.cs1302.task_tracker.model.DescendingByPriority;
 import edu.westga.cs1302.task_tracker.model.Task;
@@ -36,6 +37,7 @@ public class MainWindow {
     @FXML private TextField selectedPriority;
     @FXML private ListView<Task> tasks;
     @FXML private ComboBox<Comparator<Task>> order;
+    @FXML private ListView<String> subTasks;
 
     /** Add a new task with the provided information to the listview.
      * 
@@ -143,7 +145,35 @@ public class MainWindow {
     		this.tasks.getItems().sort(this.order.getValue());
     	}
     }
-
+    
+    @FXML
+    void addSubTask(ActionEvent event) {
+    	Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
+    	
+    	ContainerTask newCont = new ContainerTask(selectedTask.getName(), selectedTask.getDescription(), selectedTask.getPriority(), selectedTask);
+    	Task subTask = new Task(this.name.getText(),this.description.getText(), this.priority.getValue());
+    	ContainerTask results;
+    	
+    	results = newCont.addTask(selectedTask, subTask);
+    
+    	this.tasks.getItems().remove(selectedTask);//create method helper
+    	
+    	String nameReplace = "";
+    	nameReplace = newCont.toString();
+    
+    	Task replaceTask = new Task(nameReplace, selectedTask.getDescription(), selectedTask.getPriority());
+    	
+    	this.tasks.getItems().add(replaceTask);//create method helper
+    	
+    	this.subTasks.getItems().add(results.getName());
+    	
+    	String resultsDesc = results.getDescription();
+    	this.selectedDescription.setText(resultsDesc);
+    	String resultsPri = results.getPriority().toString();
+    	this.selectedPriority.setText(resultsPri);
+    }
+    
+   
     /** Perform any needed initialization of UI components and underlying objects.
      * 
      * @precondition none

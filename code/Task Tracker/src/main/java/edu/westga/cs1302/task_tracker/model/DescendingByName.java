@@ -23,7 +23,7 @@ public class DescendingByName implements Comparator<Task>  {
 			if (task1.equals(null) || task2.equals(null)) {
 				throw new NullPointerException("task cannot be null");
 			}
-		return task1.getName().compareTo(task2.getName());
+		return task1.getName().compareTo(task2.getName()) * -1;
 		}
 		
 		/** Returns the name of the task to represent the task as a String
