@@ -143,6 +143,8 @@ public class MainWindow {
     
     /* Sort the listView for tasks
      * 
+     * @precondition none
+     * @postcondition tasks in the listview are sorted based on the provided ordering
      */
     private void sortLists() {
     	if (this.order.getValue() != null) {
@@ -150,25 +152,56 @@ public class MainWindow {
     	}
     }
    
+    /** Adds a subTask to the task
+     * 
+     * @precondition none
+     * @postcondition	A subTask will be added to the selected Task with 
+     * 					1) a name matching the text of the name of the selectedTask, 
+     * 					2) a description matching the text of the description textarea,
+     * 					3) a priority matching the selected value of the priority combobox,
+     * 					4) Task will be replaced with Task with a new name to indicated subTask have been added
+     * 
+     * @param  event we will not use this parameter, only here due to JavaFX Library requirement
+     */
     @FXML
     void addSubTask(ActionEvent event) {
     	Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
-    	Task subTask = new Task(this.name.getText(), this.description.getText(), this.priority.getValue()); 
+
+    	try {
+    		Task subTask = new Task(this.name.getText(), this.description.getText(), this.priority.getValue()); 
+    	
     	Task replaceTask = selectedTask.addTask(subTask);
     	
     	this.tasks.getItems().remove(selectedTask);
     	this.tasks.getItems().add(replaceTask);
+    } catch (NullPointerException error) {
+    	Alert alert = new Alert(AlertType.ERROR);
+    	alert.setContentText("Select a Task to add Subtask");
+		alert.showAndWait();
     	
     }
     
+    }
+    
+    /** Pops up an alert window to show the details of a task
+     * 
+     * @precondition selectedTask != null
+     * @postcondition Displays a pop up alert with information about selected subTask
+     * 
+     * @param event we will not use this parameter, only here due to JavaFX Library requirement
+     */
     @FXML
     void popUpSubTask(MouseEvent event) {
     	Task selectedTask = this.subTasks.getSelectionModel().getSelectedItem();
-    	
+    	try {
     	Alert alert = new Alert(AlertType.INFORMATION);
     	alert.setContentText("Name: " + selectedTask + System.lineSeparator() + "Description: " + selectedTask.getDescription() + System.lineSeparator() + "Priority: " + selectedTask.getPriority());
 		alert.showAndWait();
-		
+    	} catch (NullPointerException error) {
+	    	Alert alert = new Alert(AlertType.ERROR);
+	    	alert.setContentText("Select a Task to see subTask");
+			alert.showAndWait();
+    	}
     }
     
     

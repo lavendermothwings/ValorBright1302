@@ -118,17 +118,26 @@ public class Task {
 	
 	/** Adds subTask to Task
 	 * 
+	 * @precondition subtask != null
+	 * @postcondition Task has subtask added
+	 * 
 	 * @param subtask subtask that is added to the Task
 	 * 
-	 * @return conTask ContainerTask that has the new subTask added to the Task
+	 * @return contTask ContainerTask that has the new subTask added to the Task
 	 */
 	public Task addTask(Task subtask) {
+		if (subtask == null) {
+			throw new IllegalArgumentException("subtask must not be null");
+		}
 		ContainerTask contTask = new ContainerTask(this.getName(), this.getDescription(), this.getPriority());
 		contTask.addTask(subtask);
 		return contTask;
 	}
 	
 	/** Gets the subtasks in the Tasks
+	 * 
+	 * @precondition none
+	 * @postcondition size() == 0
 	 * 
 	 * @return emptyList ArrayList that is empty
 	 */
