@@ -38,6 +38,8 @@ public class MainWindow {
     @FXML private ListView<Task> tasks;
     @FXML private ComboBox<Comparator<Task>> order;
     @FXML private ListView<String> subTasks;
+    	  private String resultsDesc;
+    	  private String resultsPri; 
 
     /** Add a new task with the provided information to the listview.
      * 
@@ -151,29 +153,37 @@ public class MainWindow {
     	Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
     	
     	ContainerTask newCont = new ContainerTask(selectedTask.getName(), selectedTask.getDescription(), selectedTask.getPriority(), selectedTask);
+    	
     	Task subTask = new Task(this.name.getText(),this.description.getText(), this.priority.getValue());
     	ContainerTask results;
     	
     	results = newCont.addTask(selectedTask, subTask);
-    
-    	this.tasks.getItems().remove(selectedTask);//create method helper
     	
-    	String nameReplace = "";
-    	nameReplace = newCont.toString();
-    
+      	
+    	
+    	String nameReplace = newCont.toString();
     	Task replaceTask = new Task(nameReplace, selectedTask.getDescription(), selectedTask.getPriority());
-    	
+    	this.tasks.getItems().remove(selectedTask);//create method helper
+
     	this.tasks.getItems().add(replaceTask);//create method helper
-    	
     	this.subTasks.getItems().add(results.getName());
     	
-    	String resultsDesc = results.getDescription();
-    	this.selectedDescription.setText(resultsDesc);
-    	String resultsPri = results.getPriority().toString();
-    	this.selectedPriority.setText(resultsPri);
+    	this.resultsDesc = results.getDescription();
+    	this.resultsPri = results.getPriority().toString();
     }
     
-   
+    @FXML
+    void popUpSubTask(MouseEvent event) {
+    	String selectedTask = this.subTasks.getSelectionModel().getSelectedItem();
+    	
+    	Alert alert = new Alert(AlertType.INFORMATION);
+    	alert.setContentText("Name: " + selectedTask + System.lineSeparator() + "Description: " + this.resultsDesc + System.lineSeparator() + "Priority: " + this.resultsPri);
+		alert.showAndWait();
+		
+    	
+    }
+    
+    
     /** Perform any needed initialization of UI components and underlying objects.
      * 
      * @precondition none

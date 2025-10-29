@@ -34,6 +34,7 @@ public class ContainerTask extends Task {
 	@Override
 	public String toString() {
 		String newName = this.name;
+	
 		
 		if (newName.contains("+")) {
 			int plusRemove = newName.indexOf('+');
