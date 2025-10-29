@@ -4,7 +4,6 @@ import java.util.Comparator;
 
 import edu.westga.cs1302.task_tracker.model.AscendingByName;
 import edu.westga.cs1302.task_tracker.model.AscendingByPriority;
-import edu.westga.cs1302.task_tracker.model.ContainerTask;
 import edu.westga.cs1302.task_tracker.model.DescendingByName;
 import edu.westga.cs1302.task_tracker.model.DescendingByPriority;
 import edu.westga.cs1302.task_tracker.model.Task;
@@ -37,9 +36,7 @@ public class MainWindow {
     @FXML private TextField selectedPriority;
     @FXML private ListView<Task> tasks;
     @FXML private ComboBox<Comparator<Task>> order;
-    @FXML private ListView<String> subTasks;
-    	  private String resultsDesc;
-    	  private String resultsPri; 
+    @FXML private ListView<Task> subTasks;
 
     /** Add a new task with the provided information to the listview.
      * 
@@ -75,9 +72,14 @@ public class MainWindow {
     @FXML
     void selectTask(MouseEvent event) {
     	Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
+    	this.subTasks.getItems().clear();
     	if (selectedTask != null) {
     		this.selectedPriority.setText(selectedTask.getPriority().toString());
     		this.selectedDescription.setText(selectedTask.getDescription());
+    		for (int iterate = 0; iterate < selectedTask.getSubTasks().size(); iterate++) {
+    			this.subTasks.getItems().add(selectedTask.getSubTasks().get(iterate));
+    		}
+    		
     	}
     }
 
@@ -139,7 +141,7 @@ public class MainWindow {
     	this.sortLists();
     }
     
-    /* Sort the listView
+    /* Sort the listView for tasks
      * 
      */
     private void sortLists() {
@@ -147,40 +149,26 @@ public class MainWindow {
     		this.tasks.getItems().sort(this.order.getValue());
     	}
     }
-    
+   
     @FXML
     void addSubTask(ActionEvent event) {
     	Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
+    	Task subTask = new Task(this.name.getText(), this.description.getText(), this.priority.getValue()); 
+    	Task replaceTask = selectedTask.addTask(subTask);
     	
-    	ContainerTask newCont = new ContainerTask(selectedTask.getName(), selectedTask.getDescription(), selectedTask.getPriority(), selectedTask);
+    	this.tasks.getItems().remove(selectedTask);
+    	this.tasks.getItems().add(replaceTask);
     	
-    	Task subTask = new Task(this.name.getText(),this.description.getText(), this.priority.getValue());
-    	ContainerTask results;
-    	
-    	results = newCont.addTask(selectedTask, subTask);
-    	
-      	
-    	
-    	String nameReplace = newCont.toString();
-    	Task replaceTask = new Task(nameReplace, selectedTask.getDescription(), selectedTask.getPriority());
-    	this.tasks.getItems().remove(selectedTask);//create method helper
-
-    	this.tasks.getItems().add(replaceTask);//create method helper
-    	this.subTasks.getItems().add(results.getName());
-    	
-    	this.resultsDesc = results.getDescription();
-    	this.resultsPri = results.getPriority().toString();
     }
     
     @FXML
     void popUpSubTask(MouseEvent event) {
-    	String selectedTask = this.subTasks.getSelectionModel().getSelectedItem();
+    	Task selectedTask = this.subTasks.getSelectionModel().getSelectedItem();
     	
     	Alert alert = new Alert(AlertType.INFORMATION);
-    	alert.setContentText("Name: " + selectedTask + System.lineSeparator() + "Description: " + this.resultsDesc + System.lineSeparator() + "Priority: " + this.resultsPri);
+    	alert.setContentText("Name: " + selectedTask + System.lineSeparator() + "Description: " + selectedTask.getDescription() + System.lineSeparator() + "Priority: " + selectedTask.getPriority());
 		alert.showAndWait();
 		
-    	
     }
     
     

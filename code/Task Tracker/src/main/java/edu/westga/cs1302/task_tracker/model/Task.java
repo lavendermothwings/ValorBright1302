@@ -1,7 +1,6 @@
 package edu.westga.cs1302.task_tracker.model;
 
 import java.util.ArrayList;
-import edu.westga.cs1302.task_tracker.model.ContainerTask;
 
 /** Stores basic information for a Task
  * 
@@ -41,7 +40,6 @@ public class Task {
 	private String description;
 	private final String name;
 	private final TaskPriority priority;
-	public Task subTask;
 	
 	/** Create a new Task with the provided information.
 	 * 
@@ -118,12 +116,22 @@ public class Task {
 		this.description = description;
 	}
 	
-	public ContainerTask addTask(Task task, Task subTask) {
-		ContainerTask contTask = new ContainerTask(task.getName(), task.getDescription(), task.getPriority(), task);
-	
+	/** Adds subTask to Task
+	 * 
+	 * @param subtask subtask that is added to the Task
+	 * 
+	 * @return conTask ContainerTask that has the new subTask added to the Task
+	 */
+	public Task addTask(Task subtask) {
+		ContainerTask contTask = new ContainerTask(this.getName(), this.getDescription(), this.getPriority());
+		contTask.addTask(subtask);
 		return contTask;
 	}
 	
+	/** Gets the subtasks in the Tasks
+	 * 
+	 * @return emptyList ArrayList that is empty
+	 */
 	public ArrayList<Task> getSubTasks() {
 		ArrayList<Task> emptyList = new ArrayList<Task>();
 		
