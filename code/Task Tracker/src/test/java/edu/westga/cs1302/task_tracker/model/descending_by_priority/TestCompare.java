@@ -1,4 +1,4 @@
-package edu.westga.cs1302.task_tracker.model.descending;
+package edu.westga.cs1302.task_tracker.model.descending_by_priority;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,20 +12,18 @@ class TestCompare {
 
 	@Test
 	void testO1IsNull() {
-		Task o1 = new Task("name", "desc", TaskPriority.HIGH);
 		Task o2 = new Task("name", "desc", TaskPriority.HIGH);
 		DescendingByPriority descending = new DescendingByPriority();
 		
-		assertThrows(IllegalArgumentException.class, ()->{descending.compare(null, o2);});
+		assertThrows(NullPointerException.class, ()->{descending.compare(null, o2);});
 	}
 
 	@Test
 	void testO2IsNull() {
 		Task o1 = new Task("name", "desc", TaskPriority.HIGH);
-		Task o2 = new Task("name", "desc", TaskPriority.HIGH);
 		DescendingByPriority descending = new DescendingByPriority();
 		
-		assertThrows(IllegalArgumentException.class, ()->{descending.compare(o1, null);});
+		assertThrows(NullPointerException.class, ()->{descending.compare(o1, null);});
 	}
 	
 	@Test

@@ -13,6 +13,8 @@ public class DescendingByPriority implements Comparator<Task>  {
 	
 	 /** Compares tasks
 	   * 
+	   * @precondition task1 != null, task2 != null
+	   * 
 	   * @param task1 task that will be compared
 	   * @param task2 second task that will be compared
 	   * 

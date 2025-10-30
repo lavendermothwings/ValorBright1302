@@ -13,7 +13,9 @@ public class AscendingByName implements Comparator<Task>  {
 	
 	
 	
-  /** Compares tasks priority
+  /** Compares tasks name, with letters or numbers
+   * 
+   * @precondition task1 != null, task2 != null, !task1.isEmpty
    * 
    * @param task1 task that will be compared
    * @param task2 second task that will be compared
@@ -25,7 +27,11 @@ public class AscendingByName implements Comparator<Task>  {
 			if (task1.equals(null) || task2.equals(null)) {
 				throw new NullPointerException("task cannot be null");
 			}
-		return task1.getName().compareTo(task2.getName());
+			if (task1.getName().isEmpty() || task2.getName().isEmpty()) {
+				throw new IllegalArgumentException("name cannot be empty");
+			}
+			
+		return task1.getName().toLowerCase().compareTo(task2.getName().toLowerCase());
 		}
 		
 		/** Returns the name of the task to represent the task as a String

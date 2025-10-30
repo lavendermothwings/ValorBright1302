@@ -15,6 +15,8 @@ public class AscendingByPriority implements Comparator<Task>  {
 	
   /** Compares tasks priority
    * 
+   * @precondition task1 != null, task2 != null
+   * 
    * @param task1 task that will be compared
    * @param task2 second task that will be compared
    * 

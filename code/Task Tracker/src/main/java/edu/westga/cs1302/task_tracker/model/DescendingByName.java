@@ -11,7 +11,9 @@ import java.util.Comparator;
 public class DescendingByName implements Comparator<Task>  {
 	private final String descend = "Descending by Name";
 	
-	 /** Compares tasks
+	 /** Compares tasks name, with letters or numbers
+	   * 
+	   * @precondition task1 != null, task2 != null, !task1.isEmpty
 	   * 
 	   * @param task1 task that will be compared
 	   * @param task2 second task that will be compared
@@ -23,7 +25,11 @@ public class DescendingByName implements Comparator<Task>  {
 			if (task1.equals(null) || task2.equals(null)) {
 				throw new NullPointerException("task cannot be null");
 			}
-		return task1.getName().compareTo(task2.getName()) * -1;
+			if (task1.getName().isEmpty() || task2.getName().isEmpty()) {
+				throw new IllegalArgumentException("name cannot be empty");
+			}
+			
+		return task1.getName().toLowerCase().compareTo(task2.getName().toLowerCase()) * -1;
 		}
 		
 		/** Returns the name of the task to represent the task as a String
