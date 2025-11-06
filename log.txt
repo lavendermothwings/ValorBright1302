@@ -1,3 +1,99 @@
+commit ff07b1db6504388bb0cb02495230fc49e16fec5e
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 29 23:24:57 2025 -0400
+
+    Created Tests and Added to Tests
+    
+    1) Created tests for AscendingByName
+    2) Created tests for DescendingByName
+    3) Created tests for ContainerTask
+    4) Added test to Task for AddTask
+
+commit 3e13304570fc5aa10f6530562790628797c1c4bb
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 29 16:14:28 2025 -0400
+
+    General Overlook of Project
+    
+    1) Added in preconditions where they were missing
+    2) Checked and added @param and @pre and @post
+    3) Ran Checkstyle and fixed all the errors
+
+commit 35fd9421600655964e140cba3f918d4c2fa24c71
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 29 13:00:51 2025 -0400
+
+    Improved and Corrected subTasks related issues
+    
+    1) Fixed ContainerTask toString
+    2) Fixed ContainerTask addTask, Changed it to return this
+    3) Fixed ContainerTask constructor
+    4) Adjusted MainWindow.java addSubTask and fixed NullPointer issues
+    5) Fixed Task addTask to the correctly return Task, not ContainerTask
+
+commit 57e598169dc1ff6fd88f0f3352fe3f99d48c788b
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 29 10:19:52 2025 -0400
+
+    Displayed Selected SubTask
+    
+    1) Added an alert to the subTask listview that pops up with a mouseclick on selected task.
+
+commit 15cbdabda5c91c35271f8c04a981baa4be440cac
+Author: Valor Bright <lavendermothwings>
+Date:   Tue Oct 28 15:04:54 2025 -0400
+
+    Added SubTask and supporting code
+    
+    1) Created UI for SubTask in scenebuilder
+    
+    2) Updated Task class with addTask and getSubTasks
+    3) Created ContainerTask class
+    4) Updated MainWindow to replace Task and display list of SubTasks
+
+commit e32f3314e24d0a3fab852b492469bb0a4f8f13ce
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Oct 24 11:27:07 2025 -0400
+
+    Sorted Based on Name
+    
+    1) Changed comparators to AscendByPriority and DescendByPriority
+    2) Added comprarators AscendByName and DescendByName
+    3) Added AscendByName and DescendByName to the sorting combobox
+    4) Added toString to comparators AscendByPriority and DescendByPriority
+
+commit bceb232f38d416f3364ea54eba7cef2199245601
+Author: Valor Bright <lavendermothwings>
+Date:   Thu Oct 23 12:20:23 2025 -0400
+
+    Re-Sort When Adding or Updating Task
+    
+    1) Added sorting into both addTask and removeTask.
+
+commit 42d85973f68e9cb9262a9e418a1d48d5309816c5
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 22 13:34:37 2025 -0400
+
+    Create Project 2
+    
+    1) Create Project 2 in Eclipse using the Task Tracker starter.
+
+commit 6d98a44af312c9c210819b09ab0bc18efb85e454
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 15 23:06:53 2025 -0400
+
+    Final Version
+    
+    1) Submit final version
+
+commit 227563437cd76a87e25e7960d51355e75365562e
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 15 22:18:02 2025 -0400
+
+    Added Commit History
+    
+    1) Added Commit History from git log
+
 commit 296c08107d27e2ad383a5e16a2638bc60a78176d
 Author: Valor Bright <lavendermothwings>
 Date:   Wed Oct 15 22:04:01 2025 -0400

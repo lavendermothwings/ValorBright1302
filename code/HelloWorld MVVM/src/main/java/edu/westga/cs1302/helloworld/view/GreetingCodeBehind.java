@@ -51,6 +51,9 @@ public class GreetingCodeBehind {
 		this.greetingLabel.textProperty().bind(this.viewModel.greetingProperty());
 		this.nameTextField.textProperty().bindBidirectional(this.viewModel.nameProperty());
 		this.namesTextArea.textProperty().bind(this.viewModel.allNamesProperty());
+		this.submitButton.setOnAction(event-> {
+			this.viewModel.sayGreeting();
+	});
 	}
 
 	@FXML
