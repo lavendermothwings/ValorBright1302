@@ -1,3 +1,26 @@
+commit 9754f79955517101d7ee67a29da002b6d8bdf44e
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 5 22:51:23 2025 -0500
+
+    Added Tests and Moved Generator into viewmodel
+    
+    1) Added tests for viewModel
+    2) Moved generator into viewmodel and out of mainwindow
+    3) Added more test
+    4) Did general checkstyle
+    5) Added commit history
+
+commit faecdbca9da4f8c5ddea9d37da6e85127295f9c9
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 5 19:49:56 2025 -0500
+
+    Created New Project for Lab7 and Transferred Everthing
+    
+    1) Created new Lab7
+    2) Trasnferred the MainWindow from old project
+    3) Created new ViewModel and transferred from old project
+    4) PasswordGenrator class was left as is, no changes made
+
 commit ff07b1db6504388bb0cb02495230fc49e16fec5e
 Author: Valor Bright <lavendermothwings>
 Date:   Wed Oct 29 23:24:57 2025 -0400
