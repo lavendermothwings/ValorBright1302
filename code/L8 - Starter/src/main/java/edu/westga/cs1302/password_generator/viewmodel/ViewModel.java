@@ -137,9 +137,32 @@ public class ViewModel {
     	this.pastPasswords.add(password);
     	
     }
-	
-	public boolean checkMinimumLengthText(String newValue) {
-		return newValue == null || !newValue.matches("\\d{1,}")  || Integer.parseInt(newValue) == 0;
-	}
 
+	/**Checks if newValue is null
+	 * 
+	 * @param newValue the new input
+	 * @return boolean true if not null
+	 */
+	public boolean checkIfNull(String newValue) {
+		return newValue != null;
+	}
+	
+	/**Checks if newValue is a digit that is 1-5 digits long
+	 * 
+	 * @param newValue the new input 
+	 * @return boolean true if not a digit that is 1-5 digits long
+	 */
+	public boolean checkIfNewValueMatches(String newValue) {
+		return !newValue.matches("\\d{1,5}");
+	}
+	
+	/** Checks if newValue is zero
+	 * 
+	 * @param newValue the new input
+	 * @return boolean false if 0
+	 */
+	public boolean checkIfNewValueIsZero(String newValue) {
+		return !(Integer.parseInt(newValue) == 0);
+	}
+	
 }

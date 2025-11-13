@@ -65,9 +65,16 @@ public class MainWindow {
     
     private void setupListenersForValidation() {
 		this.minimumLength.textProperty().addListener((observable, oldValue, newValue) -> {
-				this.errorTextLabel.setVisible(this.vm.checkMinimumLengthText(newValue));
+				if (this.vm.checkIfNull(newValue) || this.vm.checkIfNewValueIsZero(newValue)) {
+					if (this.vm.checkIfNewValueMatches(newValue)) {
+						this.minimumLength.setText(oldValue);
+					} else {
+						this.errorTextLabel.setVisible(false);
+					}
+				}
+			
 		});
-
+				
 	}
     
 }
