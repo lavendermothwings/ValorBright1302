@@ -1,0 +1,18 @@
+commit c4ce84f837a60251548c5313171df5b49ba2f77c
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 12 20:19:47 2025 -0500
+
+    Fixed ChangeListener and Added Tests and CheckStyle
+    
+    1) Fixed Changelistener, now works and prevents letters and non digits from being entered
+    2) Added Tests for the viewModel to test aspects of the Changelistener in MainWindow
+    3) Finalized format with Checkstyle, general tidying
+
+commit 164d0882a5d2ecf8ae6f0552f014dd5e2b28d73f
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 12 17:29:58 2025 -0500
+
+    Added Changelistener and Bind Listview to ViewModel
+    
+    1) Added changelistener for minimumLength, does not work
+    2) Bind ListView to ViewModel
