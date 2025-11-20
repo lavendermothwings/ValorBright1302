@@ -1,8 +1,5 @@
 package edu.westga.cs1302.password_generator.viewmodel;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -14,9 +11,6 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
-import javafx.scene.control.Alert;
-import javafx.stage.FileChooser;
-import javafx.stage.FileChooser.ExtensionFilter;
 
 /** Manages utilizing the model and makes properties available to bind the UI elements.
  * 
@@ -33,7 +27,6 @@ public class ViewModel {
 	private StringProperty errorText;
 	
     private PasswordGenerator generator;
-    private File selectedFile;
 	
 	/** Initialize the properties for the viewmodel
 	 */
@@ -97,18 +90,6 @@ public class ViewModel {
 	public StringProperty getErrorText() {
 		return this.errorText;
 	}
-	
-	public boolean checkMinimumLength(String newValue) {
-		if (!newValue.matches("\\d+") || Integer.parseInt(newValue) == 0)  {
-			
-			return true;
-		} else {
-			
-			return false;
-		}
-	}
-
-
 
 	/** Generates a password using the minimum length, require digit, require lower case, and require upper case property values.
 	 * 
@@ -141,34 +122,5 @@ public class ViewModel {
     	
     	this.passwordHistory.add(password);
     }
-	
-	public void chooseAFile() {
-		FileChooser fileChooser = new FileChooser();
-		fileChooser.setTitle("OpenFile");
-		fileChooser.getExtensionFilters().addAll(
-		new ExtensionFilter("Text", "*.txt"));
-		this.selectedFile = fileChooser.showOpenDialog(null);
-	}
-	
-	public void savePassword() throws IOException  {
-		if (this.selectedFile != null) {
-			try(FileWriter writer = new FileWriter(this.selectedFile);) {
-			for (String currPass : this.passwordHistory) {
-				if (currPass != null) {
-					writer.write(currPass + System.lineSeparator());
-				
-				}
-			}
-			} catch (IOException error) {
-				throw new IOException("error");
-			}
-			}
-	}
-	
-	public void openAbout() {
-		Alert alert = new Alert(Alert.AlertType.INFORMATION);
-		alert.setContentText("This program genreates passwords and saves them to a .txt file." + System.lineSeparator() + "Created by Valor Bright");
-		alert.show();
-	}
 
 }

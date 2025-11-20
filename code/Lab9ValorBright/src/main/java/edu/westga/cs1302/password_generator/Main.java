@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	private static final String WINDOW_TITLE = "Password Generator";
 	private static final String GUI_RESOURCE = "view/MainWindow.fxml";
-	public static final String PASSWORD_FILE = "passwordFile.txt";
 
 	/**
 	 * JavaFX entry point.
