@@ -81,7 +81,7 @@ public class ViewModel {
 	public BooleanProperty getRequireLowercase() {
 		return this.requireLowercase;
 	}
-
+	
 	/** Return the password property
 	 * 
 	 * @return the password property
@@ -98,17 +98,14 @@ public class ViewModel {
 		return this.errorText;
 	}
 	
+	/** Checks if the minimumLength is valid
+	 * 
+	 * @param newValue minimum length being put into the textfield
+	 * @return boolean true if wrong and false if right
+	 */
 	public boolean checkMinimumLength(String newValue) {
-		if (!newValue.matches("\\d+") || Integer.parseInt(newValue) == 0)  {
-			
-			return true;
-		} else {
-			
-			return false;
-		}
+		return !newValue.matches("\\d+") || Integer.parseInt(newValue) == 0;
 	}
-
-
 
 	/** Generates a password using the minimum length, require digit, require lower case, and require upper case property values.
 	 * 
@@ -142,6 +139,9 @@ public class ViewModel {
     	this.passwordHistory.add(password);
     }
 	
+	/**Choose a file to add passwords
+	 * 
+	 */
 	public void chooseAFile() {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("OpenFile");
@@ -150,9 +150,13 @@ public class ViewModel {
 		this.selectedFile = fileChooser.showOpenDialog(null);
 	}
 	
+	/**Saves password into chosen file
+	 * 
+	 * @throws IOException
+	 */
 	public void savePassword() throws IOException  {
 		if (this.selectedFile != null) {
-			try(FileWriter writer = new FileWriter(this.selectedFile);) {
+			try (FileWriter writer = new FileWriter(this.selectedFile);) {
 			for (String currPass : this.passwordHistory) {
 				if (currPass != null) {
 					writer.write(currPass + System.lineSeparator());
@@ -165,9 +169,12 @@ public class ViewModel {
 			}
 	}
 	
+	/**Opens the about information
+	 * 
+	 */
 	public void openAbout() {
 		Alert alert = new Alert(Alert.AlertType.INFORMATION);
-		alert.setContentText("This program genreates passwords and saves them to a .txt file." + System.lineSeparator() + "Created by Valor Bright");
+		alert.setContentText("This program generates passwords and saves them to a .txt file." + System.lineSeparator() + "Created by Valor Bright");
 		alert.show();
 	}
 

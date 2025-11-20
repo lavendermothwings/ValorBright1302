@@ -2,31 +2,22 @@ package edu.westga.cs1302.password_generator.view;
 
 import javafx.scene.control.MenuItem;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 
-import edu.westga.cs1302.password_generator.Main;
-import edu.westga.cs1302.password_generator.model.PasswordGenerator;
 import edu.westga.cs1302.password_generator.viewmodel.ViewModel;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.stage.FileChooser;
-import javafx.stage.FileChooser.ExtensionFilter;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
+
 
 /**
  * Codebehind for the MainWindow of the Application.
@@ -66,11 +57,8 @@ public class MainWindow {
 	@FXML
 	private MenuItem save;
 
-	private PasswordGenerator generator;
-
 	private ViewModel vm;
-	private String checkNewValue;
-
+	
 	@FXML
 	void initialize() {
 
@@ -86,19 +74,17 @@ public class MainWindow {
 		this.passwordHistory.setItems(this.vm.getPasswordHistory());
 		
 		this.minimumLength.textProperty().addListener((observable, newValue, oldValue) -> {
-			this.generatePasswordButton.setDisable(false);
 			Boolean cube = this.vm.checkMinimumLength(newValue);
+			this.generatePasswordButton.setDisable(false);
+	
 			this.minLengthErrorText.setVisible(this.vm.checkMinimumLength(newValue)); 
 			
 			if (cube.equals(true)) {
-				this.generatePasswordButton.disableProperty().set(true);
-				this.minimumLength.setText(oldValue);
+				this.generatePasswordButton.disableProperty().set(true);					
 			} 
-			
-					
+				
 		});
-
-		
+	
 		
 		this.generatePasswordButton.setOnAction((event) -> {
 			this.vm.generatePassword();
@@ -109,9 +95,10 @@ public class MainWindow {
 			this.vm.chooseAFile();
 			try {
 				this.vm.savePassword();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			} catch (IOException error) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText("Did not access file or save properly");
+			alert.showAndWait();
 			}
 
 		});
