@@ -1,0 +1,26 @@
+commit c139ff5495932ccaa5d4ad60d4a4c906bc8d2fe9
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 19 20:50:35 2025 -0500
+
+    Added Tests
+    
+    1) Added tests for viewModel testing CheckMinimumLength
+
+commit 5c90528577febdb8cc5178191e4c7632806ec5b3
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 19 19:58:36 2025 -0500
+
+    Fixed Menu and Added Disable Button
+    
+    1) Fixed Save. It now saves to a txt file.
+    2) Added about
+    3) Added close, it now closes the program
+    4) Added Button Disabled, does not work yet, it will not re-able
+
+commit af1b52a265444f9be8f68e8071e4621e1aa2f5f4
+Author: Valor Bright <lavendermothwings>
+Date:   Thu Nov 13 12:14:33 2025 -0500
+
+    Created Lab9
+    
+    1) First commit, created Lab9 from starter

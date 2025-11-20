@@ -1,0 +1,384 @@
+commit c139ff5495932ccaa5d4ad60d4a4c906bc8d2fe9
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 19 20:50:35 2025 -0500
+
+    Added Tests
+    
+    1) Added tests for viewModel testing CheckMinimumLength
+
+commit 5c90528577febdb8cc5178191e4c7632806ec5b3
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 19 19:58:36 2025 -0500
+
+    Fixed Menu and Added Disable Button
+    
+    1) Fixed Save. It now saves to a txt file.
+    2) Added about
+    3) Added close, it now closes the program
+    4) Added Button Disabled, does not work yet, it will not re-able
+
+commit af1b52a265444f9be8f68e8071e4621e1aa2f5f4
+Author: Valor Bright <lavendermothwings>
+Date:   Thu Nov 13 12:14:33 2025 -0500
+
+    Created Lab9
+    
+    1) First commit, created Lab9 from starter
+
+commit 8bd0a9f5aa53db6983d26e5747f76556c92fdf9a
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 12 20:22:50 2025 -0500
+
+    Final commit with Commit History
+    
+    1) Added Commit History
+
+commit c4ce84f837a60251548c5313171df5b49ba2f77c
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 12 20:19:47 2025 -0500
+
+    Fixed ChangeListener and Added Tests and CheckStyle
+    
+    1) Fixed Changelistener, now works and prevents letters and non digits from being entered
+    2) Added Tests for the viewModel to test aspects of the Changelistener in MainWindow
+    3) Finalized format with Checkstyle, general tidying
+
+commit 164d0882a5d2ecf8ae6f0552f014dd5e2b28d73f
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 12 17:29:58 2025 -0500
+
+    Added Changelistener and Bind Listview to ViewModel
+    
+    1) Added changelistener for minimumLength, does not work
+    2) Bind ListView to ViewModel
+
+commit 097091aa05cbb295a25e2eefb82b98078f69d5a3
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 5 22:56:55 2025 -0500
+
+    final commit to ensure all changes are included
+
+commit 9754f79955517101d7ee67a29da002b6d8bdf44e
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 5 22:51:23 2025 -0500
+
+    Added Tests and Moved Generator into viewmodel
+    
+    1) Added tests for viewModel
+    2) Moved generator into viewmodel and out of mainwindow
+    3) Added more test
+    4) Did general checkstyle
+    5) Added commit history
+
+commit faecdbca9da4f8c5ddea9d37da6e85127295f9c9
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 5 19:49:56 2025 -0500
+
+    Created New Project for Lab7 and Transferred Everthing
+    
+    1) Created new Lab7
+    2) Trasnferred the MainWindow from old project
+    3) Created new ViewModel and transferred from old project
+    4) PasswordGenrator class was left as is, no changes made
+
+commit ff07b1db6504388bb0cb02495230fc49e16fec5e
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 29 23:24:57 2025 -0400
+
+    Created Tests and Added to Tests
+    
+    1) Created tests for AscendingByName
+    2) Created tests for DescendingByName
+    3) Created tests for ContainerTask
+    4) Added test to Task for AddTask
+
+commit 3e13304570fc5aa10f6530562790628797c1c4bb
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 29 16:14:28 2025 -0400
+
+    General Overlook of Project
+    
+    1) Added in preconditions where they were missing
+    2) Checked and added @param and @pre and @post
+    3) Ran Checkstyle and fixed all the errors
+
+commit 35fd9421600655964e140cba3f918d4c2fa24c71
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 29 13:00:51 2025 -0400
+
+    Improved and Corrected subTasks related issues
+    
+    1) Fixed ContainerTask toString
+    2) Fixed ContainerTask addTask, Changed it to return this
+    3) Fixed ContainerTask constructor
+    4) Adjusted MainWindow.java addSubTask and fixed NullPointer issues
+    5) Fixed Task addTask to the correctly return Task, not ContainerTask
+
+commit 57e598169dc1ff6fd88f0f3352fe3f99d48c788b
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 29 10:19:52 2025 -0400
+
+    Displayed Selected SubTask
+    
+    1) Added an alert to the subTask listview that pops up with a mouseclick on selected task.
+
+commit 15cbdabda5c91c35271f8c04a981baa4be440cac
+Author: Valor Bright <lavendermothwings>
+Date:   Tue Oct 28 15:04:54 2025 -0400
+
+    Added SubTask and supporting code
+    
+    1) Created UI for SubTask in scenebuilder
+    
+    2) Updated Task class with addTask and getSubTasks
+    3) Created ContainerTask class
+    4) Updated MainWindow to replace Task and display list of SubTasks
+
+commit e32f3314e24d0a3fab852b492469bb0a4f8f13ce
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Oct 24 11:27:07 2025 -0400
+
+    Sorted Based on Name
+    
+    1) Changed comparators to AscendByPriority and DescendByPriority
+    2) Added comprarators AscendByName and DescendByName
+    3) Added AscendByName and DescendByName to the sorting combobox
+    4) Added toString to comparators AscendByPriority and DescendByPriority
+
+commit bceb232f38d416f3364ea54eba7cef2199245601
+Author: Valor Bright <lavendermothwings>
+Date:   Thu Oct 23 12:20:23 2025 -0400
+
+    Re-Sort When Adding or Updating Task
+    
+    1) Added sorting into both addTask and removeTask.
+
+commit 42d85973f68e9cb9262a9e418a1d48d5309816c5
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 22 13:34:37 2025 -0400
+
+    Create Project 2
+    
+    1) Create Project 2 in Eclipse using the Task Tracker starter.
+
+commit 6d98a44af312c9c210819b09ab0bc18efb85e454
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 15 23:06:53 2025 -0400
+
+    Final Version
+    
+    1) Submit final version
+
+commit 227563437cd76a87e25e7960d51355e75365562e
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 15 22:18:02 2025 -0400
+
+    Added Commit History
+    
+    1) Added Commit History from git log
+
+commit 296c08107d27e2ad383a5e16a2638bc60a78176d
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 15 22:04:01 2025 -0400
+
+    Moved to provided template, Reworked tests, and Altered sortTasks
+    
+    1) Moved parts of project into provided sample
+    2) Reworked the tests for Ascending and Descending, tested compare instead of sort
+    3) Altered sortTasks method to work better with provided starter
+
+commit 9504f0dd60a01ad4be96282ed7b3c8c966f3ffcf
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 15 09:13:49 2025 -0400
+
+    Added in Test in Descending
+    
+    1) Added test in Descending that doesn't work
+
+commit a0267d0c540515d50a713d87fca262b6914388ae
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 15 08:55:33 2025 -0400
+
+    Created Tests for Ascending and Descending class
+    
+    1) Created tests for Ascending
+    2) Created tests for Descending
+
+commit 434f8904cee1c614e83e6aa17be63d385c841b51
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Oct 13 10:48:00 2025 -0400
+
+    Created ComboBox for sorting list
+    
+    1) Created ComboBox to sort the list of tasks. Does both descending and ascending.
+
+commit f74213967f0e86af5fc94853e92ef33a1eaf2a8a
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Oct 13 10:45:32 2025 -0400
+
+    Created Descending
+    
+    1) Made Descending class to sort task list
+
+commit c4ede900094470421f8e80a572dfc7145a239516
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Oct 13 10:40:45 2025 -0400
+
+    Created Ascending
+    
+    1) Made the Ascending class
+
+commit 3f79dce930e5aa2ecbfb0ac0260420d1136d66ef
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Oct 10 14:02:15 2025 -0400
+
+    Fix CountPriority
+    
+    1) fixed CountPriority so that it would tally all the piorities
+
+commit 2aa6a6c27bf26c3f48c8ac38ae29eaccf49960b6
+Author: Valor Bright <lavendermothwings>
+Date:   Thu Oct 9 09:19:13 2025 -0400
+
+    Attempt to Connect PhoneBookLecture11 to Repository
+    
+    1) Tried linking it again
+
+commit 871820c5ec53af0d82823341bca7188a34ecab04
+Author: Valor Bright <lavendermothwings>
+Date:   Thu Oct 9 09:06:07 2025 -0400
+
+    Created PhoneBook
+    
+    1) Created PhoneBook
+
+commit 51e48a15591cba2a8ad313d00d8fef69c21b356e
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Oct 1 20:23:42 2025 -0400
+
+    Added Tests, Checkstyle Formatting, and Update Commit History
+    
+    1) Added tests: testLoadStudentData and testSaveStudentData
+    2) Went over project and applied checkstyle formatting
+    3) Updated commit history
+    
+    Modified loadStudentData to read file with commas
+    
+    1) modified loadStudentData to read file with commas and separate name and grade
+
+commit c592dc41bff50d710f73d58eaa459456e3d6fe99
+Author: Valor Bright <lavendermothwings>
+Date:   Sun Sep 28 21:21:29 2025 -0400
+
+    Added Commit History
+    
+    1) Added log.txt
+
+commit c4b1eb13ce150ab3eef6ece6978363e0031b050c
+Author: Valor Bright <lavendermothwings>
+Date:   Sun Sep 28 21:16:38 2025 -0400
+
+    Added Preconditions, Tests, and Formatted with CheckStyle
+    
+    1) Added preconditions that were missing
+    2) Created tests for PriorityCount
+    3) Created tests for Tasks
+    4) Formatted with Checkstyle
+    5) Went over project and made adjustments as needed, such as try/catch, this., and other oversights
+
+commit 9cd314916b628b1ac448742cf12dd101a77a16de
+Author: Valor Bright <lavendermothwings>
+Date:   Sat Sep 27 21:44:53 2025 -0400
+
+    Created a class and MainWindow method to count priorities
+    
+    1) Created a class to count priorities
+    2) Created a method in MainWindow.java to use new class and display count
+
+commit fbc3633ab511c039e72fa4e13f6a4ff0dd9521e0
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Sep 26 15:12:45 2025 -0400
+
+    Add Remove Task
+    
+    1) Added a button and method to remove a task from the ListView
+
+commit ec54955db4a750c4566f2c5f35473ef4d41c540c
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Sep 26 14:48:13 2025 -0400
+
+    Update Description
+    
+    1) Added a new button with action to change description of a task selected from the ListView
+
+commit d040fba5e051ce432868093ec2fae75e13286dc4
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Sep 26 13:39:04 2025 -0400
+
+    Add Select for ListView
+    
+    1) Added textarea for description and priority
+    2) Added code to MainWindow.java to select from ListView list and display selected Tasks description and priority
+
+commit 1aaf191c1d53c3bfaa3750cecefeae116b2f80b3
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Sep 26 10:44:47 2025 -0400
+
+    Created Lab 5 and Updated Save Students
+    
+    1) created lab 5
+    2) updated save students to have a comma and name and number to be on the same line
+
+commit d56366b710105bd4e0cdaf5d78e0b95e21f1d8fb
+Author: Valor Bright <lavendermothwings>
+Date:   Thu Sep 25 09:11:36 2025 -0400
+
+    Created SceneBuilder and Data Class
+    >
+    > 1) Created the basic controllers of the SceneBuilder
+    > 2) Created the Data class Tasks to store the name, description, and priority
+
+commit 1fa5ccfca0f6621fab28843f91f04c29a01e53d3
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Sep 24 10:00:49 2025 -0400
+
+    Changing Project name
+    
+    Changing project name from javafx sample starter to Volor Bright Project 1
+
+commit 89e851a2ed996a9827c06d7a42d0974b16ad46e7
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Sep 24 09:54:01 2025 -0400
+
+    Adding Project 1 Back
+    
+    Adding the copy of project 1 files which had been maintained in Eclipse workspace.
+
+commit bef61ab016f4b764d1382143ee3de55f36958011
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Sep 24 09:52:59 2025 -0400
+
+    removing old project files
+    
+    removing the old p1 files to move in the current version which had been imported into the eclipse workspace.
+
+commit 5c2bdc2b2f50489d7bc49013a3f91bf11338cc8e
+Author: Valor Bright <lavendermothwings>
+Date:   Tue Sep 23 09:33:55 2025 -0400
+
+    test commit
+
+commit 23ecdd6112e6dbbf225b1897e3ec3189e1733b5f
+Author: Valor Bright <lavendermothwings>
+Date:   Fri Sep 19 14:35:36 2025 -0400
+
+    Create New Repository and Add Project 1
+    
+    1) Created a new repository to replace broken one
+    2) Added JavaFx as a template for Project 1
+
+commit a8e4a7b379bb5ec475bfc44184dc4f706536b50e
+Author: lavendermothwings <30874407+lavendermothwings@users.noreply.github.com>
+Date:   Fri Sep 19 14:24:00 2025 -0400
+
+    Initial commit
