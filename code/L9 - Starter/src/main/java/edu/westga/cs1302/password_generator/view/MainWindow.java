@@ -73,7 +73,7 @@ public class MainWindow {
 		this.errorTextLabel.textProperty().bind(this.vm.getErrorText());
 		this.passwordHistory.setItems(this.vm.getPasswordHistory());
 		
-		this.minimumLength.textProperty().addListener((observable, newValue, oldValue) -> {
+		this.minimumLength.textProperty().addListener((observable, oldValue, newValue) -> {
 			Boolean cube = this.vm.checkMinimumLength(newValue);
 			this.generatePasswordButton.setDisable(false);
 	
