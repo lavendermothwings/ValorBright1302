@@ -2,6 +2,8 @@ package viewModel;
 
 import static org.junit.jupiter.api.Assertions.*;
 import edu.westga.cs1302.contact_manager.viewmodel.MainWindowViewModel;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,12 +12,41 @@ import edu.westga.cs1302.contact_manager.model.Contact;
 class TestAddContact {
 
 	@Test
-	void test() {
-		Contact contact = new Contact("name", "1234567");
+	void testAddSameNameAndPhoneNumber() {
 		MainWindowViewModel  vm = new MainWindowViewModel();
+		vm.getName().set("name");
+		vm.getPhoneNumber().set("1234567");
 		vm.addContact();
-		vm.getPhoneNumber().get();
-		System.out.println(vm.getPhoneNumber().toString());
+		vm.getName().set("name");
+		vm.getPhoneNumber().set("1234567");
+		assertThrows(IllegalArgumentException.class, ()  -> {vm.addContact();});
+		
 	}
-
+	
+	@Test
+	void testAddSameName() {
+		MainWindowViewModel  vm = new MainWindowViewModel();
+		vm.getName().set("name");
+		vm.getPhoneNumber().set("1234567");
+		vm.addContact();
+		vm.getName().set("name");
+		vm.getPhoneNumber().set("1234568");
+		assertThrows(IllegalArgumentException.class, ()  -> {vm.addContact();});
+	}
+	
+	@Test
+	void testAddSameNumber() {
+		MainWindowViewModel  vm = new MainWindowViewModel();
+		vm.getName().set("name");
+		vm.getPhoneNumber().set("1234567");
+		vm.addContact();
+		vm.getName().set("nametw0");
+		vm.getPhoneNumber().set("1234567");
+		assertThrows(IllegalArgumentException.class, ()  -> {vm.addContact();});
+	}
+	
+	
 }
+
+	
+

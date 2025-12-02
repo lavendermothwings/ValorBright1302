@@ -36,7 +36,7 @@ public class MainWindowViewModel {
 		this.searchCriteria = new SimpleStringProperty("");
 		this.contacts = new SimpleListProperty<Contact>(FXCollections.observableList(new ArrayList<Contact>()));
 		this.phoneNumberMap = new HashMap<String, Contact>();
-		this.nameMap = new HashMap<String, Contact>();
+		this.nameMap = new HashMap<String, Contact>();	
 	}
 	
 	/** Return the name property used when adding a contact
@@ -79,7 +79,7 @@ public class MainWindowViewModel {
 	 * 
 	 * @return the list property containing all contacts added to the system
 	 */
-	public ListProperty getContacts() {
+	public ListProperty<Contact> getContacts() {
 		return this.contacts;
 	}
 	
@@ -94,11 +94,8 @@ public class MainWindowViewModel {
 		Contact contact = new Contact(this.name.get(), this.phoneNumber.get());
 		
 		if (this.phoneNumberMap.containsKey(contact.getPhoneNumber())) {
-			throw new IllegalArgumentException("Phone number is already in list");
-			
-		} 
-		
-		else if (this.nameMap.containsKey(contact.getName())) {
+			throw new IllegalArgumentException("Phone number is already in list");		
+		} else if (this.nameMap.containsKey(contact.getName())) {
 			throw new IllegalArgumentException("Name is already in list");
 		} else {
 		
@@ -128,24 +125,14 @@ public class MainWindowViewModel {
 			}
 		}
 		
-		if (Contact.checkPhoneNumber(this.searchCriteria.get())) {
+		if (Contact.checkName(this.searchCriteria.get())) {
 			Contact contact = this.nameMap.get(this.searchCriteria.get());
 			if (contact != null) {
 				return contact.toString();
 			}
 		}
 		
-//		for (Contact currContact : this.contacts.get()) {
-//			if (currContact.getName().equals(this.searchCriteria.get()) || currContact.getPhoneNumber().equals(this.searchCriteria.get())) {
-//				return currContact.toString();
-//			}
-//		}
 		return "No contact found.";
 	}
-	
-	//only have to test viewmodel stuff
-	//use map instead of list, to find
-	//name and phonenum be unique
-	//need 2 maps, one for num, one for name
 	
 }
