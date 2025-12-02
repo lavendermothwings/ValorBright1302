@@ -1,0 +1,17 @@
+commit 7c7570c9f3c6537aa7821345e80a7f41cdd1d7c8
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Dec 1 22:25:28 2025 -0500
+
+    Create tests, Run Checkstyle
+    
+    1) Create tests for findContact and addContact
+    2) Run Checkstyle and tidy code
+
+commit a149a52361f7b2af1a668a6fa8544086b2d650b5
+Author: Valor Bright <lavendermothwings>
+Date:   Sun Nov 30 20:24:55 2025 -0500
+
+    Created Lab 10, Added in Map, and Updated to prevent duplicates
+    
+    1) Added map into the viewmodel
+    2) Updated so that duplicate names and phonenumbers cannot be added

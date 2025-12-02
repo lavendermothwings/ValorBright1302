@@ -1,3 +1,64 @@
+commit 7c7570c9f3c6537aa7821345e80a7f41cdd1d7c8
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Dec 1 22:25:28 2025 -0500
+
+    Create tests, Run Checkstyle
+    
+    1) Create tests for findContact and addContact
+    2) Run Checkstyle and tidy code
+
+commit a149a52361f7b2af1a668a6fa8544086b2d650b5
+Author: Valor Bright <lavendermothwings>
+Date:   Sun Nov 30 20:24:55 2025 -0500
+
+    Created Lab 10, Added in Map, and Updated to prevent duplicates
+    
+    1) Added map into the viewmodel
+    2) Updated so that duplicate names and phonenumbers cannot be added
+
+commit be2f0aaf8072cb820be47828b48b6c98fa88d070
+Author: Valor Bright <lavendermothwings>
+Date:   Thu Nov 20 08:47:40 2025 -0500
+
+    Added Commit History
+    
+    1) Added commit history
+
+commit c139ff5495932ccaa5d4ad60d4a4c906bc8d2fe9
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 19 20:50:35 2025 -0500
+
+    Added Tests
+    
+    1) Added tests for viewModel testing CheckMinimumLength
+
+commit 5c90528577febdb8cc5178191e4c7632806ec5b3
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 19 19:58:36 2025 -0500
+
+    Fixed Menu and Added Disable Button
+    
+    1) Fixed Save. It now saves to a txt file.
+    2) Added about
+    3) Added close, it now closes the program
+    4) Added Button Disabled, does not work yet, it will not re-able
+
+commit af1b52a265444f9be8f68e8071e4621e1aa2f5f4
+Author: Valor Bright <lavendermothwings>
+Date:   Thu Nov 13 12:14:33 2025 -0500
+
+    Created Lab9
+    
+    1) First commit, created Lab9 from starter
+
+commit 8bd0a9f5aa53db6983d26e5747f76556c92fdf9a
+Author: Valor Bright <lavendermothwings>
+Date:   Wed Nov 12 20:22:50 2025 -0500
+
+    Final commit with Commit History
+    
+    1) Added Commit History
+
 commit c4ce84f837a60251548c5313171df5b49ba2f77c
 Author: Valor Bright <lavendermothwings>
 Date:   Wed Nov 12 20:19:47 2025 -0500
