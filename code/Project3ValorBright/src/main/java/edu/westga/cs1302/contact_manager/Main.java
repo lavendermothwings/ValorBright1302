@@ -1,4 +1,4 @@
-package edu.westga.cs1302.comic_collections;
+package edu.westga.cs1302.contact_manager;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -19,7 +19,7 @@ import javafx.scene.layout.Pane;
  */
 public class Main extends Application {
 
-	private static final String WINDOW_TITLE = "Contact Manager";
+	private static final String WINDOW_TITLE = "Comic Collections";
 	private static final String MAIN_WINDOW_FXML = "view/MainWindow.fxml";
 
 	/** JavaFX Launch process

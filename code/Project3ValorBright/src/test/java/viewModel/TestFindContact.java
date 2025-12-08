@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import edu.westga.cs1302.comic_collections.viewmodel.MainWindowViewModel;
+import edu.westga.cs1302.contact_manager.viewmodel.MainWindowViewModel;
 
 class TestFindContact {
 

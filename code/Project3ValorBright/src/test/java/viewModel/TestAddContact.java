@@ -7,8 +7,8 @@ import javafx.beans.property.StringProperty;
 
 import org.junit.jupiter.api.Test;
 
-import edu.westga.cs1302.comic_collections.model.Contact;
-import edu.westga.cs1302.comic_collections.viewmodel.MainWindowViewModel;
+import edu.westga.cs1302.contact_manager.model.Contact;
+import edu.westga.cs1302.contact_manager.viewmodel.MainWindowViewModel;
 
 class TestAddContact {
 

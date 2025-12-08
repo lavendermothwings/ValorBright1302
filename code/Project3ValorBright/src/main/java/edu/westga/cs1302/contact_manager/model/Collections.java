@@ -1,4 +1,4 @@
-package edu.westga.cs1302.comic_collections.model;
+package edu.westga.cs1302.contact_manager.model;
 
 /** Stores information for a collections.
  * 
