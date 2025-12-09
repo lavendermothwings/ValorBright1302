@@ -34,7 +34,6 @@ public class Contact {
 	 * @precondition none
 	 * @postcondition none
 	 * 
-	 * @param phoneNumber the text to be checked
 	 * @return true 	if phoneNumber matches expected style
 	 * 		   false 	if phoneNumber does not match expected style
 	 */

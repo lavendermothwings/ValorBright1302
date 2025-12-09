@@ -12,23 +12,24 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 
-/**
- * 
- */
-public class AddComicWindow {
+public class FindComicWindow {
  
     @FXML private TextField addComicName;
     @FXML private TextField addComicNumber;
     @FXML private Button cancelAddComic;
     @FXML private Button confirmAddComic;
+    
 
     private AddComicWindowViewModel acvm;
-    private MainWindowViewModel vm; 
-   
+    
+    
+    
+    
+    
+    
     @FXML
     void initialize() {
     	this.acvm = new AddComicWindowViewModel();
-    	this.vm = new MainWindowViewModel();
     	
     	this.acvm.getAddComicName().bindBidirectional(this.addComicName.textProperty());
     	this.acvm.getAddComicNumber().bindBidirectional(this.addComicNumber.textProperty());
@@ -43,21 +44,34 @@ public class AddComicWindow {
 						alert.showAndWait();
 					}
 				}
-			); 
+			);
     	
-    	this.confirmAddComic.setOnAction(
+    	this.cancelAddComic.setOnAction(
 				(event) -> {
 					try {
-						this.acvm.confirmAddComic();
-					//	this.vm.getComicBooks();
-			
+						this.acvm.cancelAddComic();
 					} catch (IllegalArgumentException error) {
 						Alert alert = new Alert(AlertType.ERROR);
-						alert.setContentText("Unable to Add Comic book: " + error.getMessage());
+						alert.setContentText("Unable to Remove Comic book: " + error.getMessage());
 						alert.showAndWait();
 					}
 				}
-			);	
+			);
+//    	
+//    	this.confirmAddComic.setOnAction(
+//				(event) -> {
+//					try {
+//						this.acvm.confirmAddComic();
+//				
+//					} catch (IllegalArgumentException error) {
+//						Alert alert = new Alert(AlertType.ERROR);
+//						alert.setContentText("Unable to Remove Comic book: " + error.getMessage());
+//						alert.showAndWait();
+//					}
+//				}
+//			);
+    	
+    	
     }
    
 }

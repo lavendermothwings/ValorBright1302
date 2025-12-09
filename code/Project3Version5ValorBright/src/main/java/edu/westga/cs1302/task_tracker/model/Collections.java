@@ -2,14 +2,20 @@ package edu.westga.cs1302.task_tracker.model;
 
 import java.util.ArrayList;
 
-/** Stores basic information for a Task
+/** Stores basic information for a Collection
  * 
- * @author CS 1302
+ * @author Valor Bright
  * @version Fall 2025
  */
 public class Collections {
 	private String name;
 	
+	/** Create a new collection 
+	 * 
+	 * @precondition name != null && !name.isEmpty()
+	 * 
+	 * @param name of the collection
+	 */
 	public Collections(String name) {
 		if (name == null) {
 			throw new IllegalArgumentException("name must not be null");
@@ -31,20 +37,23 @@ public class Collections {
 		return this.name;
 	}
 	
-	public ArrayList<Collections> getComicBooks(){
+	/** Gets comic books from list
+	 * 
+	 * @return ArrayList that is empty
+	 */
+			
+	public ArrayList<Collections> getComicBooks() {
 		ArrayList<Collections> emptyList = new ArrayList<Collections>();
 		return emptyList;
 	}
 	
-	public Collections addCollection(Collections newCollection) {
-		if (newCollection == null) {
-			throw new IllegalArgumentException("subtask must not be null");
-		}
-		Collections collection = new Collections(this.getName());
-		collection.addCollection(newCollection);
-		return collection;
-	}
-	
+	/** Returns the name of the collection to represent the collection as a String
+	 * 
+	 * @precondition none
+	 * @postcondition none
+	 * 
+	 * @return the name of the collection
+	 */
 	@Override
 	public String toString() {
 		return this.name;

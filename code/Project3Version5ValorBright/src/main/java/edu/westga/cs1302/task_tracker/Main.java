@@ -17,6 +17,8 @@ import java.io.IOException;
 public class Main extends Application {
   private static final String WINDOW_TITLE = "JavaFX Starter Sample";
   private static final String GUI_RESOURCE = "views/MainWindow.fxml";
+  public static final String OPTIONS_WINDOW_RESOURCE = "views/AddComicWindow.fxml";
+  public static final String FIND_WINDOW_RESOURCE = "views/FindComicWindow.fxml";
 
   /**
    * JavaFX entry point.

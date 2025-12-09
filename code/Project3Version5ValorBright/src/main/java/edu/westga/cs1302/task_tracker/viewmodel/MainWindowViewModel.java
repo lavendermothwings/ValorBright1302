@@ -14,13 +14,16 @@ public class MainWindowViewModel {
 	private StringProperty name;
 	private ListProperty<Collections> collection;
 	private ListProperty<ComicBook> comicBooks;
+
 	
-	
+	private AddComicWindowViewModel acvm;
 	
 	public MainWindowViewModel() {
 		this.name = new SimpleStringProperty("");
 		this.collection = new SimpleListProperty<Collections>(FXCollections.observableList(new ArrayList<Collections>()));
-		
+		this.comicBooks = new SimpleListProperty<ComicBook>(FXCollections.observableList(new ArrayList<ComicBook>()));
+	
+	
 	}
 	
 	
@@ -43,6 +46,11 @@ public class MainWindowViewModel {
 	}
 	
 	
+	public void addComic(ComicBook newComicBook) {
+	
+	}
+	
+	
 	public void cancelAddComic() {
 		
 	}
@@ -56,6 +64,7 @@ public class MainWindowViewModel {
 	}
 	
 	public ListProperty<ComicBook> getComicBooks() {
+		
 		return this.comicBooks;
 	}
 	
