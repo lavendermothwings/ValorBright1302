@@ -1,31 +1,27 @@
 package edu.westga.cs1302.task_tracker.views;
 
-import edu.westga.cs1302.task_tracker.model.Collections;
-import edu.westga.cs1302.task_tracker.model.ComicBook;
 import edu.westga.cs1302.task_tracker.viewmodel.AddComicWindowViewModel;
-import edu.westga.cs1302.task_tracker.viewmodel.MainWindowViewModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
 
+/** Find comic 
+ * 
+ * @author Valor Bright
+ * @version Fall 2025
+ * 
+ * 	not modified yet for finding
+ */
 public class FindComicWindow {
  
     @FXML private TextField addComicName;
     @FXML private TextField addComicNumber;
     @FXML private Button cancelAddComic;
     @FXML private Button confirmAddComic;
-    
 
     private AddComicWindowViewModel acvm;
-    
-    
-    
-    
-    
     
     @FXML
     void initialize() {
@@ -57,20 +53,6 @@ public class FindComicWindow {
 					}
 				}
 			);
-//    	
-//    	this.confirmAddComic.setOnAction(
-//				(event) -> {
-//					try {
-//						this.acvm.confirmAddComic();
-//				
-//					} catch (IllegalArgumentException error) {
-//						Alert alert = new Alert(AlertType.ERROR);
-//						alert.setContentText("Unable to Remove Comic book: " + error.getMessage());
-//						alert.showAndWait();
-//					}
-//				}
-//			);
-    	
     	
     }
    
