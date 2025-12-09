@@ -1,19 +1,15 @@
 package edu.westga.cs1302.task_tracker.views;
 
-import edu.westga.cs1302.task_tracker.model.Collections;
-import edu.westga.cs1302.task_tracker.model.ComicBook;
 import edu.westga.cs1302.task_tracker.viewmodel.AddComicWindowViewModel;
-import edu.westga.cs1302.task_tracker.viewmodel.MainWindowViewModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
 
-/**
- * 
+/** Controller for AddComicWindow
+ * @author Valor Bright
+ * @version Fall 2025
  */
 public class AddComicWindow {
  
@@ -23,12 +19,10 @@ public class AddComicWindow {
     @FXML private Button confirmAddComic;
 
     private AddComicWindowViewModel acvm;
-    private MainWindowViewModel vm; 
    
     @FXML
     void initialize() {
     	this.acvm = new AddComicWindowViewModel();
-    	this.vm = new MainWindowViewModel();
     	
     	this.acvm.getAddComicName().bindBidirectional(this.addComicName.textProperty());
     	this.acvm.getAddComicNumber().bindBidirectional(this.addComicNumber.textProperty());

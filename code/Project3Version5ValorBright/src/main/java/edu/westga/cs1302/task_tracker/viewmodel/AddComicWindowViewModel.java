@@ -9,7 +9,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 
-/** Controller for AddComicWindow
+/** Viewmodel for AddComicWindow
  * 
  * @author Valor Bright
  * @version Fall 2025
