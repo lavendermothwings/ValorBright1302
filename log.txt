@@ -1,3 +1,75 @@
+commit 765176cb2dbf4e3adaee45399c0af8bac5f31a9d
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Dec 8 23:24:53 2025 -0500
+
+    3 Finding a comic by title
+    
+    1) A set up view framework for finding comic
+    2) C set up viewmodel frame for finding comic
+    3) CheckStyle on whole project
+
+commit 8962bc522b3dd63991c3a2cf4c245f8279b21236
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Dec 8 23:04:33 2025 -0500
+
+    D Binding View and ViewModel for Adding Comic
+    
+    1) bound the eventhandlers
+    2) eventhandler for launching AddComicWindow
+    3) added handler to add comic to comicBookList
+
+commit 0c388626c83251a7d5b1583d525cab44074b1454
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Dec 8 22:57:10 2025 -0500
+
+    Made a AddComicWindow
+    
+    1) handles name for comic
+    2) handles number for comic
+    3) handles list of comics
+
+commit 80171d097ab7c1ef9f57e2ae37ab92a1c866a25e
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Dec 8 22:41:50 2025 -0500
+
+    Add Model for Adding Comic
+    
+    1) Created model for comic book
+    2) Modified to try and be able to add it to collection
+
+commit f90910813c3018a20c1431df4620a26606cd2807
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Dec 8 11:25:48 2025 -0500
+
+    ReMade Project, A Update MainWindow, Created FrameWork
+    
+    1) Made a MainWindow for fxml and java and added in collecton name, listview, add and remove buttons
+    2) Created general framework for project
+
+commit 36d77541d87ea8be7fdde974760974cb0ccb3034
+Author: Valor Bright <lavendermothwings>
+Date:   Sat Dec 6 14:06:33 2025 -0500
+
+    B Model For Storing Collections
+    
+    1) Created model for storing collections
+
+commit c640361847827f6ca40d08f4ebbcc053ebd4fc90
+Author: Valor Bright <lavendermothwings>
+Date:   Sat Dec 6 13:52:36 2025 -0500
+
+    Created Project 3
+    
+    1) Created Project 3 from framework of Lab10
+
+commit c521b07662a3269d4055245d75fbe3ae078d98e1
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Dec 1 22:30:37 2025 -0500
+
+    Add Commit History
+    
+    1) Added Commit History
+
 commit 7c7570c9f3c6537aa7821345e80a7f41cdd1d7c8
 Author: Valor Bright <lavendermothwings>
 Date:   Mon Dec 1 22:25:28 2025 -0500
