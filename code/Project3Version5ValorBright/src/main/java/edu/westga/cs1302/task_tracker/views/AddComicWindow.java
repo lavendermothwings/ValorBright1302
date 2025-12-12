@@ -43,8 +43,6 @@ public class AddComicWindow {
 				(event) -> {
 					try {
 						this.acvm.confirmAddComic();
-					//	this.vm.getComicBooks();
-			
 					} catch (IllegalArgumentException error) {
 						Alert alert = new Alert(AlertType.ERROR);
 						alert.setContentText("Unable to Add Comic book: " + error.getMessage());

@@ -2,6 +2,7 @@ package edu.westga.cs1302.task_tracker.viewmodel;
 
 import java.util.ArrayList;
 
+import edu.westga.cs1302.task_tracker.model.Collections;
 import edu.westga.cs1302.task_tracker.model.ComicBook;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -15,10 +16,10 @@ import javafx.collections.FXCollections;
  * @version Fall 2025
  */
 public class AddComicWindowViewModel {
-	private MainWindowViewModel vm = new MainWindowViewModel();
 	private StringProperty addComicName;
 	private StringProperty addComicNumber;
 	private ListProperty<ComicBook> comicBooks;
+	private Collections collection;
 	
 	/** Initialize the AddComicWindowViewModel
 	 * 
@@ -29,6 +30,7 @@ public class AddComicWindowViewModel {
 		this.addComicName = new SimpleStringProperty("");
 		this.addComicNumber = new SimpleStringProperty("");
 		this.comicBooks = new SimpleListProperty<ComicBook>(FXCollections.observableList(new ArrayList<ComicBook>()));
+		this.collection = new Collections("placeholder");
 	}
 	
 	/** Returns the comic name property
@@ -61,12 +63,21 @@ public class AddComicWindowViewModel {
 		//close window
 	}
 	
+	/**Gets collection from selected collection from UI
+	 * 
+	 * @param collection selected collection from UI
+	 * @return collection selected collection from UI
+	 */
+	public Collections getCollectionNeeded(Collections collection) {
+		return collection;
+	}
+	
 	/** Confirms Adding Comic
 	 * 
 	 */
 	public void confirmAddComic() {
-		ComicBook comic = new ComicBook(this.addComicName.get(), this.getAddComicNumber().get());
-		this.vm.addComic(comic);
+		ComicBook comic = new ComicBook(this.getAddComicName().get(), this.getAddComicNumber().get());
+		this.collection.getComicBooks().add(comic);
 	}
 	
 	/** Gets comic book list

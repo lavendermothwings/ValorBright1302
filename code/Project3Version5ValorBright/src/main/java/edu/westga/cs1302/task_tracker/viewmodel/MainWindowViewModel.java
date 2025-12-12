@@ -19,7 +19,8 @@ public class MainWindowViewModel {
 	private StringProperty name;
 	private ListProperty<Collections> collection;
 	private ListProperty<ComicBook> comicBooks;
-
+	private AddComicWindowViewModel acvm;
+	
 	/** Initialize the components
 	 * 
 	 */
@@ -27,7 +28,7 @@ public class MainWindowViewModel {
 		this.name = new SimpleStringProperty("");
 		this.collection = new SimpleListProperty<Collections>(FXCollections.observableList(new ArrayList<Collections>()));
 		this.comicBooks = new SimpleListProperty<ComicBook>(FXCollections.observableList(new ArrayList<ComicBook>()));
-	
+		this.acvm = new AddComicWindowViewModel();
 	}
 	
 	/** Get the name of the collection
@@ -45,20 +46,22 @@ public class MainWindowViewModel {
 		Collections collection = new Collections(this.name.get());
 		this.collection.add(collection);
 	}
-
-	/**Add comic book
-	 * 
-	 * @param newComicBook new comic to add to list
-	 */
-	public void addComic(ComicBook newComicBook) {
-	
-	}
 	
 	/** Confirms the adding of a comic
 	 * 
 	 */
 	public void confirmAddComic() {
 		
+	}
+	
+	/** Set collection for adding comics
+	 * 
+	 * @param collection selected collection from UI
+	 */
+	public void setCollection(Collections collection) {
+		ComicBook comic = new ComicBook(this.acvm.getAddComicName().get(), this.acvm.getAddComicNumber().get());
+		
+		collection.getComicBooks().add(comic);
 	}
 	
 	/**Gets the collection

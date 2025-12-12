@@ -5,6 +5,7 @@ import java.io.IOException;
 import edu.westga.cs1302.task_tracker.Main;
 import edu.westga.cs1302.task_tracker.model.Collections;
 import edu.westga.cs1302.task_tracker.model.ComicBook;
+import edu.westga.cs1302.task_tracker.viewmodel.AddComicWindowViewModel;
 import edu.westga.cs1302.task_tracker.viewmodel.MainWindowViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +25,7 @@ import javafx.scene.control.MenuItem;
  * @author Valor Bright
  * @version Fall 2025
  */
+
 public class MainWindow {
     @FXML private ListView<Collections> collection;
     @FXML private ListView<ComicBook> comicBooks;
@@ -36,13 +38,15 @@ public class MainWindow {
     @FXML private MenuItem removeComicContextMenu;
   
     private MainWindowViewModel vm;
+    private AddComicWindowViewModel acvm;
    
     @FXML
     void initialize() {
     	this.vm = new MainWindowViewModel();
-    	
+    	this.acvm = new AddComicWindowViewModel();
     	this.vm.getName().bindBidirectional(this.name.textProperty());
     	this.collection.setItems(this.vm.getCollections());
+    	this.comicBooks.setItems(this.acvm.getComicBooks());
     	
     	this.addCollection.setOnAction(
 				(event) -> {
@@ -69,7 +73,6 @@ public class MainWindow {
 					}
 				}
 			);
-    	
     	this.addComic.setOnAction(
 				(event) -> {
 					try {
@@ -83,7 +86,8 @@ public class MainWindow {
 				    	addComicWindow.setScene(scene);
 				    	addComicWindow.initModality(Modality.APPLICATION_MODAL);
 				    	addComicWindow.show();
-				    
+				    	this.acvm.getCollectionNeeded(this.collection.getSelectionModel().getSelectedItem());
+				    	
 					} catch (IllegalArgumentException error) {
 						Alert alert = new Alert(AlertType.ERROR);
 						alert.setContentText("Unable to Add Comic book: " + error.getMessage());
@@ -94,7 +98,8 @@ public class MainWindow {
 						alert.showAndWait();
 					}
 				}	
-			); 	
+			);
+    	 	
     }
 }
 

@@ -42,8 +42,8 @@ public class Collections {
 	 * @return ArrayList that is empty
 	 */
 			
-	public ArrayList<Collections> getComicBooks() {
-		ArrayList<Collections> emptyList = new ArrayList<Collections>();
+	public ArrayList<ComicBook> getComicBooks() {
+		ArrayList<ComicBook> emptyList = new ArrayList<ComicBook>();
 		return emptyList;
 	}
 	
