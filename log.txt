@@ -1,3 +1,33 @@
+commit d68a45d90b08fe05dbbcf2c5055b313393c9e197
+Author: Valor Bright <lavendermothwings>
+Date:   Thu Dec 11 21:59:09 2025 -0500
+
+    General Clean Up
+    
+    1) Removed parts that were unfinished and cluttering code
+    2) Removed tests that were inaccurate or unfinished
+    3) Attempted to fix AddComic button, may have made it worse
+    4) Left a framework of some unfinished parts in case project is extended
+    5) Ran chekcstyle again and cleaned up
+
+commit 3d09a5495f64479b40e50f30050547f1ac5bc811
+Author: Valor Bright <lavendermothwings>
+Date:   Thu Dec 11 21:17:25 2025 -0500
+
+    General Changes Just Saving Effort
+    
+    1) Attempted to fix project but will revert project back to previous version
+    2) Will keep tests
+    3) Need to rerun checkstyle
+
+commit c58c2dbae8b1b62dafe74a82f8d915940fc6b9e7
+Author: Valor Bright <lavendermothwings>
+Date:   Mon Dec 8 23:30:43 2025 -0500
+
+    Added commit history
+    
+    1) Added commit history
+
 commit 765176cb2dbf4e3adaee45399c0af8bac5f31a9d
 Author: Valor Bright <lavendermothwings>
 Date:   Mon Dec 8 23:24:53 2025 -0500
